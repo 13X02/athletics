@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "POST /auth/login",
+    "callee": "com/javatechie"
+  },
+  {
+    "caller": "POST /auth/register",
+    "callee": "com/javatechie"
+  },
+  {
+    "caller": "com/javatechie",
+    "callee": "insert into user_credential (email,password,role,username) values (?,?,?,?)"
+  },
+  {
+    "caller": "com/javatechie",
+    "callee": "select uc1_0.id,uc1_0.email,uc1_0.password,uc1_0.role,uc1_0.username from user_credential uc1_0 where uc1_0.username=?"
+  }
+]

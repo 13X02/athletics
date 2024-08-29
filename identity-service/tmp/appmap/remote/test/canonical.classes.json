@@ -1,0 +1,7 @@
+[
+  "com/javatechie/config/CustomUserDetailsService",
+  "com/javatechie/controller/AuthController",
+  "com/javatechie/repository/UserCredentialRepository",
+  "com/javatechie/service/AuthService",
+  "com/javatechie/service/JwtService"
+]

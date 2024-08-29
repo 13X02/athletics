@@ -1,0 +1,5 @@
+language: "java"
+name: "identity-service"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.javatechie"

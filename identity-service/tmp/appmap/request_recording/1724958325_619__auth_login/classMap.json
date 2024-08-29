@@ -1,0 +1,88 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "name": "getToken",
+                    "type": "function",
+                    "static": false,
+                    "location": "com/javatechie/controller/AuthController.java:31"
+                  }
+                ],
+                "name": "AuthController",
+                "type": "class"
+              }
+            ],
+            "name": "controller",
+            "type": "package"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "name": "loadUserByUsername",
+                    "type": "function",
+                    "static": false,
+                    "location": "com/javatechie/config/CustomUserDetailsService.java:21"
+                  }
+                ],
+                "name": "CustomUserDetailsService",
+                "type": "class"
+              }
+            ],
+            "name": "config",
+            "type": "package"
+          },
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "name": "findByUsername",
+                    "type": "function",
+                    "static": false,
+                    "location": "com/javatechie/repository/UserCredentialRepository.java:-1"
+                  }
+                ],
+                "name": "UserCredentialRepository",
+                "type": "class"
+              }
+            ],
+            "name": "repository",
+            "type": "package"
+          }
+        ],
+        "name": "javatechie",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /auth/login"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select uc1_0.id,uc1_0.email,uc1_0.password,uc1_0.role,uc1_0.username from user_credential uc1_0 where uc1_0.username=?"
+      }
+    ]
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {
+    "route": "POST /auth/login",
+    "parameters": "()",
+    "status": null
+  },
+  {
+    "route": "POST /auth/register",
+    "parameters": "()",
+    "status": 200
+  }
+]

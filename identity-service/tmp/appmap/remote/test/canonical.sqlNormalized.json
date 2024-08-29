@@ -1,0 +1,4 @@
+[
+  "insert into user_credential (email,password,role,username) values (?,?,?,?)",
+  "select uc1_0.id,uc1_0.email,uc1_0.password,uc1_0.role,uc1_0.username from user_credential uc1_0 where uc1_0.username=?"
+]

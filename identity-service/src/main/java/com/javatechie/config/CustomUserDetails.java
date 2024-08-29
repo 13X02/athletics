@@ -13,7 +13,7 @@ public class CustomUserDetails implements UserDetails {
 
     private String username;
     private String password;
-    private List<GrantedAuthority> authorities;
+    private List<GrantedAuthority> authorities = new ArrayList<>();
 
     public CustomUserDetails(UserCredential userCredential) {
         this.username = userCredential.getUsername();
