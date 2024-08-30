@@ -35,5 +35,7 @@ public class Coach {
     @JsonIgnore
     private List<Athlete> athletes;
 
+    private String photoUrl;
+
 
 }

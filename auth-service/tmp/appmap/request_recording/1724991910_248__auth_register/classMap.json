@@ -1,0 +1,94 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "saveUser",
+                        "type": "function",
+                        "static": false,
+                        "location": "com/abhijith/auth_service/service/AuthService.java:21"
+                      },
+                      {
+                        "name": "generateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "com/abhijith/auth_service/service/AuthService.java:27"
+                      }
+                    ],
+                    "name": "AuthService",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "generateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "com/abhijith/auth_service/service/JwtService.java:31"
+                      }
+                    ],
+                    "name": "JwtService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "addNewUser",
+                        "type": "function",
+                        "static": false,
+                        "location": "com/abhijith/auth_service/controller/AuthController.java:26"
+                      }
+                    ],
+                    "name": "AuthController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              }
+            ],
+            "name": "auth_service",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /auth/register"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "insert into user_credential (email,password,role,username) values (?,?,?,?)"
+      }
+    ]
+  }
+]

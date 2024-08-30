@@ -1,6 +1,5 @@
 package com.abhijith.usermanagementservice.util;
 
-import com.abhijith.usermanagementservice.client.Users;
 import com.abhijith.usermanagementservice.dto.AssistanceRequestDto;
 import com.abhijith.usermanagementservice.dto.AthleteRequestDto;
 import com.abhijith.usermanagementservice.dto.CoachRequestDto;
@@ -10,7 +9,7 @@ import java.util.ArrayList;
 
 public class AppUtil {
 
-    public static Athlete toAthlete(AthleteRequestDto athleteRequestDto,String userId) {
+    public static Athlete toAthlete(AthleteRequestDto athleteRequestDto, String userId, String url) {
         if (athleteRequestDto == null) {
             return null;
         }
@@ -24,7 +23,8 @@ public class AppUtil {
                 athleteRequestDto.getHeight(),
                 athleteRequestDto.getWeight(),
                 athleteRequestDto.getCategory(),
-                null
+                null,
+                url
         );
 
     }
@@ -43,7 +43,7 @@ public class AppUtil {
         );
     }
 
-    public static Coach toCoach(CoachRequestDto coachRequestDto,String userId){
+    public static Coach toCoach(CoachRequestDto coachRequestDto,String userId,String url){
 
         if (coachRequestDto == null) {
             return null;
@@ -57,7 +57,8 @@ public class AppUtil {
                 coachRequestDto.getGender(),
                 coachRequestDto.getCategory(),
                 new ArrayList<>(),
-                new ArrayList<>()
+                new ArrayList<>(),
+                url
 
 
         );

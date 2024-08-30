@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "POST /auth/register",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "insert into user_credential (email,password,role,username) values (?,?,?,?)"
+  }
+]

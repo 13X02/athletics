@@ -33,5 +33,9 @@ public class Athlete {
     @OneToOne
     private Coach coach;
 
+    private String photoUrl;
+
+
+
 
 }

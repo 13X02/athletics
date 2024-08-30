@@ -1,0 +1,5 @@
+language: "java"
+name: "auth-service"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.abhijith.auth_service"
