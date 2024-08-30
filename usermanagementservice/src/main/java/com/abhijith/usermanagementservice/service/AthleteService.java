@@ -123,4 +123,15 @@ public class AthleteService {
     }
 
 
+    public Boolean validateAthlete(String id) {
+
+        return athleteRepository.existsById(id);
+    }
+
+    public String findAthleteByUserId(String userId) {
+        if(athleteRepository.existsById(userId)){
+            return athleteRepository.findByUserId(userId).get().getAthleteId();
+        }
+        return null;
+    }
 }

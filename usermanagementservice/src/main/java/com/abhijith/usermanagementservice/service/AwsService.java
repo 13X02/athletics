@@ -1,12 +1,12 @@
 package com.abhijith.usermanagementservice.service;
 
+
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.util.IOUtils;
@@ -20,18 +20,9 @@ import java.io.InputStream;
 
 @Service
 public class AwsService {
-//    @Value("${aws.s3.bucket.name}")
-//    private String bucketName;
-//    @Value("${aws.accessKey}")
-//    private String accessKey;
-//
-//    @Value("${aws.secretKey}")
-//    private String secretKey;
-//
-//    @Value("${aws.s3.region}")
-//    private String region;
+
     private final AmazonS3 s3Client;
-    BasicAWSCredentials credentials = new BasicAWSCredentials("SDFGHJK", "SDFGHJ");
+    BasicAWSCredentials credentials = new BasicAWSCredentials("d", "d//d/d");
 
     public AwsService() {
         this.s3Client = AmazonS3Client.builder()
@@ -49,8 +40,8 @@ public class AwsService {
 
         // Use a ByteArrayInputStream instead of the original InputStream
         try (InputStream byteArrayInputStream = new ByteArrayInputStream(contentBytes)) {
-            s3Client.putObject(new PutObjectRequest("asdfgh", fileName, byteArrayInputStream, metadata));
-            return s3Client.getUrl("asdfgh", fileName).toString();
+            s3Client.putObject(new PutObjectRequest("d", fileName, byteArrayInputStream, metadata));
+            return s3Client.getUrl("d", fileName).toString();
         } catch (AmazonServiceException ase) {
             System.out.println("Error Message: " + ase.getMessage());
             System.out.println("HTTP Status Code: " + ase.getStatusCode());

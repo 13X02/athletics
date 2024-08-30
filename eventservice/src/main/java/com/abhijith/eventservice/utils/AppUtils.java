@@ -21,7 +21,8 @@ public class AppUtils {
                 event.getEventTitle(),
                 event.getEventDate(),
                 event.getMeet().getMeetName(),
-                event.getCategory()
+                event.getCategory(),
+                event.getPhotoUrl()
         );
     }
 
@@ -40,7 +41,7 @@ public class AppUtils {
         );
     }
 
-    public static Event toEvent(EventRequestDto eventRequestDto, Meet meet) {
+    public static Event toEvent(EventRequestDto eventRequestDto, Meet meet,String photo) {
         if (eventRequestDto == null) {
             return null;
         }
@@ -54,7 +55,8 @@ public class AppUtils {
                 meet,
                 eventRequestDto.getVenue(),
                 eventRequestDto.getCategory(),
-                eventRequestDto.getEventDescription()
+                eventRequestDto.getEventDescription(),
+                photo
         );
     }
 

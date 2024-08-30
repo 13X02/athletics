@@ -1,0 +1,26 @@
+[
+  {
+    "caller": "POST /event/create",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "PUT https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/5%20%281%29.jpeg"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "insert into event (category,event_date,event_description,event_title,meet_meet_id,photo_url,venue,event_id) values (?,?,?,?,?,?,?,?)"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select next_val as id_val from event_seq for update"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "update event_seq set next_val= ? where next_val=?"
+  }
+]

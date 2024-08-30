@@ -1,8 +1,10 @@
 package com.abhijith.eventservice.service;
 
 import com.abhijith.eventservice.dto.ResultRequestDto;
+import com.abhijith.eventservice.exception.AthleteNotFoundException;
 import com.abhijith.eventservice.exception.EventNotFoundException;
 import com.abhijith.eventservice.exception.RegistrationNotFoundException;
+import com.abhijith.eventservice.feign.FeignClientService;
 import com.abhijith.eventservice.model.Event;
 import com.abhijith.eventservice.model.Registration;
 import com.abhijith.eventservice.model.Result;
@@ -27,6 +29,9 @@ public class ResultService {
 
     @Autowired
     private RegistrationRepository registrationRepository;
+
+    @Autowired
+    private FeignClientService feignClientService;
 
 
     public Result createResult(ResultRequestDto resultRequestDto){
@@ -60,4 +65,13 @@ public class ResultService {
     }
 
 
+    public List<Result> findResultByAthleteId(String athleteId) {
+        if (!feignClientService.validateAthleteId(athleteId)){
+            throw new AthleteNotFoundException("athlete not found");
+        }
+
+        List<Result> results = resultRepository.findAll().stream().filter(e->e.getRegistration().getAthleteId().equals(athleteId)).toList();
+        return results;
+
+    }
 }

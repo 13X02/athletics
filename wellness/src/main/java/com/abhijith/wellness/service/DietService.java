@@ -1,5 +1,7 @@
 package com.abhijith.wellness.service;
 
+import com.abhijith.wellness.exception.AthleteNotFoundException;
+import com.abhijith.wellness.feign.FeignClientService;
 import com.abhijith.wellness.model.DailyDiet;
 import com.abhijith.wellness.model.WeightPlan;
 import com.abhijith.wellness.repo.DailyDietRepository;
@@ -31,9 +33,16 @@ public class DietService {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private FeignClientService feignClientService;
+
     private final String API_URL_TEMPLATE = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=%s";
 
+
     public WeightPlan createWeightPlan(WeightPlan plan){
+        if (!feignClientService.validateAthleteId(plan.getAthleteId())){
+            throw new AthleteNotFoundException("athlete not found");
+        }
         Optional<WeightPlan> weightPlan = weightPlanRepository.findByAthleteId(plan.getAthleteId());
         if (weightPlan.isPresent()){
             plan.setId(weightPlan.get().getId());
@@ -42,20 +51,27 @@ public class DietService {
     }
 
     public List<DailyDiet> getDailyDietListById(String athleteId){
+        if (!feignClientService.validateAthleteId(athleteId)){
+            throw new AthleteNotFoundException("athlete not found");
+        }
         return dailyDietRepository.findAllByAthleteId(athleteId);
     }
 
     public DailyDiet createOrUpdateDailyDiet(DailyDiet diet){
+        if (!feignClientService.validateAthleteId(diet.getAthleteId())){
+            throw new AthleteNotFoundException("athlete not found");
+        }
         return dailyDietRepository.save(diet);
     }
 
     public String getAIRecommendedDiet(String athleteId) throws JsonProcessingException {
+
         Optional<WeightPlan> weightPlan = weightPlanRepository.findByAthleteId(athleteId);
         if (weightPlan.isEmpty()){
             return null;
         }
         String prompt = "Generate a dummy (not real) json response in the form {breakfast:String,lunch:String,dinner:String} for a person whose daily calorie goal is  "+weightPlan.get().getDailyCalorieGoal()+"and has preference of"+weightPlan.get().getPreference()+"food , only give json no other response";
-        String geminiKey = "";
+        String geminiKey = "AIzaSyDF5cl9sZH8KQ9sF2gcb5s3mW4CIV2yj10";
         String apiUrl = String.format(API_URL_TEMPLATE, geminiKey);
 
         HttpHeaders headers = new HttpHeaders();
@@ -84,7 +100,6 @@ public class DietService {
         ObjectMapper objectMapper1 = new ObjectMapper();
         JsonNode rootNode = objectMapper1.readTree(responseBody);
 
-// Extract the "text" field
         JsonNode textNode = rootNode.path("candidates").get(0).path("content").path("parts").get(0).path("text");
         String text = textNode.asText();
         return text;

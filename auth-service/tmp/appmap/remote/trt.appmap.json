@@ -1,0 +1,144 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "161",
+          "cookie": "JSESSIONID=C816E9DFA0423CCFAC23CAC79BCC9CD3",
+          "x-forwarded-proto": "http",
+          "postman-token": "3ce7f2ea-57ff-4e74-ae80-78911a4e693a",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:51833\"",
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8902",
+          "content-type": "application/json",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "path_info": "/wellness/recommendation",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "athleteId",
+          "object_id": 1827660486,
+          "value": "acc1f492-8768-4429-9032-88707803a622"
+        }
+      ],
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0037989,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Vary": "Origin"
+        },
+        "status": 404
+      },
+      "id": 2,
+      "parent_id": 1,
+      "thread_id": 56
+    },
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "161",
+          "cookie": "JSESSIONID=C816E9DFA0423CCFAC23CAC79BCC9CD3",
+          "x-forwarded-proto": "http",
+          "postman-token": "3ce7f2ea-57ff-4e74-ae80-78911a4e693a",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:51833\"",
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8902",
+          "content-type": "application/json",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "normalized_path_info": "/error",
+        "path_info": "/error",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 3,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "athleteId",
+          "object_id": 1827660486,
+          "value": "acc1f492-8768-4429-9032-88707803a622"
+        }
+      ],
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0083787,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Vary": "Origin",
+          "Date": "Fri, 30 Aug 2024 18:57:03 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 404
+      },
+      "id": 4,
+      "parent_id": 3,
+      "thread_id": 56
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "trt",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "remote_recording",
+      "type": "remote"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "30ee7fa24016da5603e86837dc4fa6077857f5ad"
+    }
+  },
+  "classMap": [
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /wellness/recommendation"
+        },
+        {
+          "type": "route",
+          "name": "GET /error"
+        }
+      ]
+    }
+  ]
+}

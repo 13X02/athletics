@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /event/create",
+    "parameters": "(eventTitle,eventDate,meetId,venue,category,eventDescription)",
+    "status": 404
+  }
+]

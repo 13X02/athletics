@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "GET /event/{eventId}/result",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select e1_0.event_id,e1_0.category,e1_0.event_date,e1_0.event_description,e1_0.event_title,m1_0.meet_id,m1_0.meet_name,m1_0.photo_url,e1_0.photo_url,e1_0.venue from event e1_0 left join meet m1_0 on m1_0.meet_id=e1_0.meet_meet_id where e1_0.event_id=?"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select r1_0.result_id,r1_0.comment,r1_0.event_event_id,r1_0.registration_registration_id,r1_0.score from result r1_0 where r1_0.event_event_id=?"
+  }
+]

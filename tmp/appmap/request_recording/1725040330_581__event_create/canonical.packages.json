@@ -1,0 +1,7 @@
+[
+  "com/abhijith/eventservice/controller",
+  "com/abhijith/eventservice/dto",
+  "com/abhijith/eventservice/feign",
+  "com/abhijith/eventservice/service",
+  "com/abhijith/eventservice/utils"
+]

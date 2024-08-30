@@ -1,0 +1,461 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8901
+    description: Generated server url
+paths:
+  /event/registrations/{id}/reject:
+    put:
+      tags:
+        - event-controller
+      operationId: rejectRegistration
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Registration'
+  /event/registrations/{id}/approve:
+    put:
+      tags:
+        - event-controller
+      operationId: updateRegistration
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Registration'
+  /meet/create:
+    post:
+      tags:
+        - meet-controller
+      operationId: createMeet
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: meetName
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - photo
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Meet'
+  /event/result:
+    post:
+      tags:
+        - event-controller
+      operationId: createResult
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ResultRequestDto'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Result'
+  /event/register:
+    post:
+      tags:
+        - event-controller
+      operationId: saveRegistration
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/RegistrationRequestDto'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Registration'
+  /event/create:
+    post:
+      tags:
+        - event-controller
+      operationId: createEvent
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: eventTitle
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: eventDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: meetId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: venue
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: eventDescription
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - photo
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Event'
+  /meet:
+    get:
+      tags:
+        - meet-controller
+      operationId: getMeetList
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Meet'
+  /event/{id}:
+    get:
+      tags:
+        - event-controller
+      operationId: getEventById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Event'
+  /event/{eventId}/result:
+    get:
+      tags:
+        - event-controller
+      operationId: getResultsByEvent
+      parameters:
+        - name: eventId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Result'
+  /event/results:
+    get:
+      tags:
+        - event-controller
+      operationId: getAllResults
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Result'
+  /event/results/{athleteId}:
+    get:
+      tags:
+        - event-controller
+      operationId: getResultsByAthlete
+      parameters:
+        - name: athleteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Result'
+  /event/registrations/pending:
+    get:
+      tags:
+        - event-controller
+      operationId: findPendingRegistrations
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Registration'
+  /event/registrations/event/{id}:
+    get:
+      tags:
+        - event-controller
+      operationId: getRegistrationByEvent
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Registration'
+  /event/registrations/athlete/{athleteId}:
+    get:
+      tags:
+        - event-controller
+      operationId: findRegistrationsByAthlete
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: athleteId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Registration'
+  /event/all:
+    get:
+      tags:
+        - event-controller
+      operationId: getAllEvents
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/EventResponseDto'
+components:
+  schemas:
+    Event:
+      type: object
+      properties:
+        eventId:
+          type: string
+        eventDate:
+          type: string
+          format: date-time
+        eventTitle:
+          type: string
+        meet:
+          $ref: '#/components/schemas/Meet'
+        venue:
+          type: string
+        category:
+          type: string
+        eventDescription:
+          type: string
+        photoUrl:
+          type: string
+    Meet:
+      type: object
+      properties:
+        meetId:
+          type: string
+        meetName:
+          type: string
+        photoUrl:
+          type: string
+    Registration:
+      type: object
+      properties:
+        registrationId:
+          type: string
+        athleteId:
+          type: string
+        status:
+          type: string
+          enum:
+            - PENDING
+            - APPROVED
+            - REJECTED
+        eventId:
+          $ref: '#/components/schemas/Event'
+    ResultRequestDto:
+      type: object
+      properties:
+        score:
+          type: number
+          format: double
+        comment:
+          type: string
+        eventId:
+          type: string
+        regId:
+          type: string
+    Result:
+      type: object
+      properties:
+        resultId:
+          type: string
+        score:
+          type: number
+          format: double
+        comment:
+          type: string
+        event:
+          $ref: '#/components/schemas/Event'
+        registration:
+          $ref: '#/components/schemas/Registration'
+    RegistrationRequestDto:
+      type: object
+      properties:
+        eventId:
+          type: string
+        athleteId:
+          type: string
+    EventResponseDto:
+      type: object
+      properties:
+        eventId:
+          type: string
+        eventTitle:
+          type: string
+        eventDate:
+          type: string
+          format: date-time
+        meetName:
+          type: string
+        category:
+          type: string
+        photoUrl:
+          type: string

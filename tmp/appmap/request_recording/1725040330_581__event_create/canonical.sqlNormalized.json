@@ -1,0 +1,6 @@
+[
+  "insert into event (category,event_date,event_description,event_title,meet_meet_id,photo_url,venue,event_id) values (?,?,?,?,?,?,?,?)",
+  "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?",
+  "select next_val as id_val from event_seq for update",
+  "update event_seq set next_val= ? where next_val=?"
+]

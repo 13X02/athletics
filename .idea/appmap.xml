@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="appmap-project">
+    <option name="openedAppMapEditor" value="true" />
+    <option name="recentRemoteRecordingURLs">
+      <list>
+        <option value="http://localhost:8902" />
+        <option value="http://localhost:8901" />
+        <option value="http://localhost:8081" />
+        <option value="http://localhost:9899" />
+      </list>
+    </option>
+  </component>
+</project>

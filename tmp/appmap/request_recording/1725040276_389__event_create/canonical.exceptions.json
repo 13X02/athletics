@@ -1,0 +1,21 @@
+[
+  {
+    "class": "com.abhijith.eventservice.exception.EventNotFoundException",
+    "message": "Event ID not found: create",
+    "stack": [
+      "EventService.java:59",
+      "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:90"
+    ],
+    "location": "EventService.java:59"
+  },
+  {
+    "class": "com.abhijith.eventservice.exception.EventNotFoundException",
+    "message": "Event ID not found: create",
+    "stack": [
+      "EventService.java:59",
+      "eventservice/src/main/java/com/abhijith/eventservice/service/EventService.java:55",
+      "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:90"
+    ],
+    "location": "EventService.java:59"
+  }
+]

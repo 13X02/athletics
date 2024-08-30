@@ -10,7 +10,9 @@ import com.abhijith.eventservice.repo.MeetRepositoy;
 import com.abhijith.eventservice.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,22 +26,29 @@ public class EventService {
     @Autowired
     private MeetRepositoy meetRepositoy;
 
+    @Autowired
+    private AwsService awsService;
+
     public List<Event> getAllEvents() {
         return eventRepository.findAll();
     }
 
-    public Event createEvent(EventRequestDto eventRequestDto) {
+    public Event createEvent(EventRequestDto eventRequestDto, MultipartFile photo) throws IOException {
 
+        // Find the Meet entity
         Optional<Meet> meet = meetRepositoy.findById(eventRequestDto.getMeetId());
-        if (meet.isPresent()){
+        if (meet.isPresent()) {
+            // Upload the photo to AWS S3
+            String photoUrl = awsService.uploadFile(photo.getInputStream(), photo.getOriginalFilename());
 
-            Event event = AppUtils.toEvent(eventRequestDto,meet.get());
+            // Create the Event entity with the photo URL
+            Event event = AppUtils.toEvent(eventRequestDto, meet.get(),photoUrl);
+
+            // Save and return the event
             return eventRepository.save(event);
-        }else{
+        } else {
             throw new MeetNotFoundException(eventRequestDto.getMeetId());
         }
-
-
     }
     public Event getEventById(String id) {
 

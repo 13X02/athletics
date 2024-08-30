@@ -1,0 +1,20 @@
+[
+  "authHead",
+  "authHeader",
+  "category",
+  "eventDate",
+  "eventDescription",
+  "eventRequestDto",
+  "eventTitle",
+  "fileInputStream",
+  "fileName",
+  "meet",
+  "meetId",
+  "name",
+  "object",
+  "p0",
+  "photo",
+  "session",
+  "token",
+  "venue"
+]

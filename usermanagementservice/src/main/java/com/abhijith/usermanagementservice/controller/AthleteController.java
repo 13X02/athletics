@@ -127,4 +127,14 @@ public class AthleteController {
         List<Athlete> athletes = athleteService.getAll();
         return new ResponseEntity<>(athletes, HttpStatus.OK);
     }
+
+    @GetMapping("validate")
+    public Boolean validateAthleteId(@RequestParam("id") String id) {
+        return athleteService.validateAthlete(id);
+    }
+
+    @GetMapping("/findByUserId")
+    public String findAthleteByUserId(@RequestParam("userId") String userId) {
+        return athleteService.findAthleteByUserId(userId);
+    }
 }

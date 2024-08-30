@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /event/register",
+    "parameters": "()",
+    "status": 500
+  }
+]

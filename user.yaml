@@ -1,0 +1,549 @@
+openapi: 3.0.1
+info:
+  title: OpenAPI definition
+  version: v0
+servers:
+  - url: http://localhost:8900
+    description: Generated server url
+paths:
+  /coaches/update:
+    put:
+      tags:
+        - coach-controller
+      operationId: updateProfile
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: birthDate
+          in: query
+          required: false
+          schema:
+            type: string
+            format: date-time
+        - name: gender
+          in: query
+          required: false
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: false
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Coach'
+  /athletes/edit:
+    put:
+      tags:
+        - athlete-controller
+      operationId: editAthlete
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: birthDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: gender
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: height
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: weight
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Athlete'
+  /coaches/requests/decline/{reqId}:
+    post:
+      tags:
+        - coach-controller
+      operationId: declineRequest
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: reqId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /coaches/requests/approve/{reqId}:
+    post:
+      tags:
+        - coach-controller
+      operationId: approveRequest
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: reqId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: string
+  /coaches/create:
+    post:
+      tags:
+        - coach-controller
+      operationId: createProfile
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: birthDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: gender
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - photo
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Coach'
+  /coaches/achievements:
+    post:
+      tags:
+        - coach-controller
+      operationId: setAchievements
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Achievments'
+        required: true
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Coach'
+  /athletes/request-assistance:
+    post:
+      tags:
+        - athlete-controller
+      operationId: requestAssistance
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: coachId
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: message
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/AssistanceRequest'
+  /athletes/create:
+    post:
+      tags:
+        - athlete-controller
+      operationId: createProfile_1
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+        - name: firstName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: lastName
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: birthDate
+          in: query
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: gender
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: height
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: weight
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+        - name: coachId
+          in: query
+          required: true
+          schema:
+            type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              required:
+                - photo
+              type: object
+              properties:
+                photo:
+                  type: string
+                  format: binary
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Athlete'
+  /coaches:
+    get:
+      tags:
+        - coach-controller
+      operationId: getAllCoaches
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coach'
+  /coaches/{coachId}:
+    get:
+      tags:
+        - coach-controller
+      operationId: getCoachById
+      parameters:
+        - name: coachId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Coach'
+  /coaches/search:
+    get:
+      tags:
+        - coach-controller
+      operationId: searchByName
+      parameters:
+        - name: name
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Coach'
+  /coaches/requests:
+    get:
+      tags:
+        - coach-controller
+      operationId: getAssistanceRequests
+      parameters:
+        - name: Authorization
+          in: header
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/AssistanceRequest'
+  /athletes:
+    get:
+      tags:
+        - athlete-controller
+      operationId: getAllAthletes
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Athlete'
+  /athletes/{id}:
+    get:
+      tags:
+        - athlete-controller
+      operationId: getAthleteById
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                $ref: '#/components/schemas/Athlete'
+  /athletes/validate/{id}:
+    get:
+      tags:
+        - athlete-controller
+      operationId: validateAthleteId
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: OK
+          content:
+            '*/*':
+              schema:
+                type: boolean
+components:
+  schemas:
+    Achievments:
+      type: object
+      properties:
+        achievmentId:
+          type: string
+        meetName:
+          type: string
+        event:
+          type: string
+        score:
+          type: string
+        perfomance:
+          type: string
+    Coach:
+      type: object
+      properties:
+        coachId:
+          type: string
+        userId:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        birthDate:
+          type: string
+          format: date-time
+        gender:
+          type: string
+        category:
+          type: string
+        achievements:
+          type: array
+          items:
+            $ref: '#/components/schemas/Achievments'
+        photoUrl:
+          type: string
+    Athlete:
+      type: object
+      properties:
+        athleteId:
+          type: string
+        firstName:
+          type: string
+        lastName:
+          type: string
+        birthDate:
+          type: string
+          format: date-time
+        gender:
+          type: string
+        height:
+          type: string
+        weight:
+          type: string
+        category:
+          type: string
+        coach:
+          $ref: '#/components/schemas/Coach'
+        photoUrl:
+          type: string
+    AssistanceRequest:
+      type: object
+      properties:
+        assistanceRequestId:
+          type: string
+        athlete:
+          $ref: '#/components/schemas/Athlete'
+        status:
+          type: string
+          enum:
+            - PENDING
+            - APPROVED
+            - REJECTED
+        remarks:
+          type: string
+        coach:
+          $ref: '#/components/schemas/Coach'

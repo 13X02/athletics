@@ -19,4 +19,6 @@ public class EventResponseDto {
 
     private String category;
 
+    private String photoUrl;
+
 }

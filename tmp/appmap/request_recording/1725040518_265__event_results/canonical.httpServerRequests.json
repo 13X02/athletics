@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /event/results",
+    "parameters": "()",
+    "status": 200
+  }
+]

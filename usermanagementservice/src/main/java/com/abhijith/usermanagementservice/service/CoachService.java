@@ -2,6 +2,7 @@ package com.abhijith.usermanagementservice.service;
 
 import com.abhijith.usermanagementservice.dto.CoachRequestDto;
 import com.abhijith.usermanagementservice.model.*;
+import com.abhijith.usermanagementservice.repository.AchievementsRepository;
 import com.abhijith.usermanagementservice.repository.AssistanceRequestRepository;
 import com.abhijith.usermanagementservice.repository.AthleteRepository;
 import com.abhijith.usermanagementservice.repository.CoachRepository;
@@ -20,16 +21,19 @@ public class CoachService {
     private final AssistanceRequestRepository assistanceRequestRepository;
     private final AthleteRepository athleteRepository;
     private final AwsService awsService;  // Use the AwsService for AWS interactions
+    private final AchievementsRepository achievementsRepository;
 
     @Autowired
     public CoachService(CoachRepository coachRepository,
                         AssistanceRequestRepository assistanceRequestRepository,
                         AthleteRepository athleteRepository,
-                        AwsService awsService) {
+                        AwsService awsService,
+                        AchievementsRepository achievementsRepository) {
         this.coachRepository = coachRepository;
         this.assistanceRequestRepository = assistanceRequestRepository;
         this.athleteRepository = athleteRepository;
         this.awsService = awsService;
+        this.achievementsRepository = achievementsRepository;
     }
 
     public Coach createProfile(CoachRequestDto coachRequestDto, String userId, MultipartFile photo) throws IOException {
@@ -72,10 +76,12 @@ public class CoachService {
     }
 
     public Coach setAchievements(Achievments achievements, String userId) {
+
         Coach coach = coachRepository.findByUserId(userId)
                 .orElseThrow(() -> new IllegalArgumentException("Coach not found with user ID: " + userId));
 
-        coach.getAchievements().add(achievements);
+        coach.getAchievements().add(achievementsRepository.save(achievements));
+        System.out.println(coach.getAchievements());
         return coachRepository.save(coach);
     }
 

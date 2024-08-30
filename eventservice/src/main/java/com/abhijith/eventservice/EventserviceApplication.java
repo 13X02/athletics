@@ -2,8 +2,10 @@ package com.abhijith.eventservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 @SpringBootApplication
+@EnableFeignClients
 public class EventserviceApplication {
 
     public static void main(String[] args) {

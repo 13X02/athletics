@@ -1,0 +1,11 @@
+[
+  "com/abhijith/eventservice/controller/EventController",
+  "com/abhijith/eventservice/dto/UserRole",
+  "com/abhijith/eventservice/feign/FeignClientService",
+  "com/abhijith/eventservice/service/AwsService",
+  "com/abhijith/eventservice/service/EventService",
+  "com/abhijith/eventservice/service/JwtService",
+  "com/abhijith/eventservice/utils/AppUtils",
+  "com/abhijith/eventservice/utils/JwtUtil",
+  "com/abhijith/eventservice/utils/StringPrefixedSequenceIdGenerator"
+]

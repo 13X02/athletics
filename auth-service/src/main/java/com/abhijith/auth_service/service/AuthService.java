@@ -22,6 +22,7 @@ public class AuthService {
 
         credential.setPassword(passwordEncoder.encode(credential.getPassword()));
         try{
+            System.out.println(credential);
             return repository.save(credential);
 
         }catch (Exception e){

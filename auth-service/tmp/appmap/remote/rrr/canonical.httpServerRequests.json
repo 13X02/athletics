@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /event/{id}",
+    "parameters": "(eventTitle,eventDate,meetId,venue,category,eventDescription)",
+    "status": 404
+  }
+]

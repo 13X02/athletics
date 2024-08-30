@@ -10,5 +10,4 @@ import lombok.NoArgsConstructor;
 public class MeetRequestDto {
 
     private String meetName;
-    private String photoUrl;
 }

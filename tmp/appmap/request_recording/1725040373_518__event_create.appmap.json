@@ -1,0 +1,680 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "378108",
+          "cookie": "JSESSIONID=0EDC54EBB05A44ED292ECC70717BE973",
+          "x-forwarded-proto": "http",
+          "postman-token": "856afb1b-fa5e-41fa-8e00-01a4263f4f91",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:50083\"",
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8901",
+          "content-type": "multipart/form-data; boundary=--------------------------298545496324528970145171",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "normalized_path_info": "/event/create",
+        "path_info": "/event/create",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventTitle",
+          "object_id": 1377510524,
+          "value": "Jump"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventDate",
+          "object_id": 1387429406,
+          "value": "2024-08-08"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "meetId",
+          "object_id": 1438652059,
+          "value": "M_0000"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "venue",
+          "object_id": 650396153,
+          "value": "London"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "category",
+          "object_id": 771209625,
+          "value": "300M"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventDescription",
+          "object_id": 2000047892,
+          "value": "dummy"
+        }
+      ],
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.controller.EventController",
+      "event": "call",
+      "id": 2,
+      "lineno": 68,
+      "method_id": "createEvent",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHead",
+          "object_id": 1445247584,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventTitle",
+          "object_id": 1377510524,
+          "value": "Jump"
+        },
+        {
+          "class": "java.sql.Date",
+          "kind": "req",
+          "name": "eventDate",
+          "object_id": 387559515,
+          "value": "2024-08-08"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "meetId",
+          "object_id": 1438652059,
+          "value": "M_0000"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "venue",
+          "object_id": 650396153,
+          "value": "London"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "category",
+          "object_id": 771209625,
+          "value": "300M"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventDescription",
+          "object_id": 2000047892,
+          "value": "dummy"
+        },
+        {
+          "class": "org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile",
+          "kind": "req",
+          "name": "photo",
+          "object_id": 580385703,
+          "value": "org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2297fba7"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.controller.EventController",
+        "object_id": 869335753,
+        "value": "com.abhijith.eventservice.controller.EventController@33d102c9"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.service.JwtService",
+      "event": "call",
+      "id": 3,
+      "lineno": 17,
+      "method_id": "extractUserInfo",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 1445247584,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.service.JwtService",
+        "object_id": 416838151,
+        "value": "com.abhijith.eventservice.service.JwtService@18d87207"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.utils.JwtUtil",
+      "event": "call",
+      "id": 4,
+      "lineno": 22,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 643345797,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.utils.JwtUtil",
+        "object_id": 1159775371,
+        "value": "com.abhijith.eventservice.utils.JwtUtil@4520c48b"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0003548,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.utils.JwtUtil",
+      "event": "call",
+      "id": 6,
+      "lineno": 48,
+      "method_id": "getUserIdFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 643345797,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.utils.JwtUtil",
+        "object_id": 1159775371,
+        "value": "com.abhijith.eventservice.utils.JwtUtil@4520c48b"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0001318,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 370785774,
+        "value": "U_00054"
+      },
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.utils.JwtUtil",
+      "event": "call",
+      "id": 8,
+      "lineno": 52,
+      "method_id": "getRoleFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 643345797,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDU0Iiwic3ViIjoiamFuZV9zbWl0aCIsImlhdCI6MTcyNTAzOTM0NiwiZXhwIjoxNzI1MDQxMTQ2fQ.ys04Oo6YnoE4drwat_JZ6b1-JLwXguKywoHaKqhWwyg"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.utils.JwtUtil",
+        "object_id": 1159775371,
+        "value": "com.abhijith.eventservice.utils.JwtUtil@4520c48b"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0001161,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 122131578,
+        "value": "ADMIN"
+      },
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.dto.UserRole",
+      "event": "call",
+      "id": 10,
+      "lineno": 3,
+      "method_id": "valueOf",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "name",
+          "object_id": 122131578,
+          "value": "ADMIN"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/dto/UserRole.java",
+      "static": true,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0000067,
+      "event": "return",
+      "id": 11,
+      "parent_id": 10,
+      "return_value": {
+        "class": "com.abhijith.eventservice.dto.UserRole",
+        "object_id": 1170406354,
+        "value": "ADMIN"
+      },
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0007176,
+      "event": "return",
+      "id": 12,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.eventservice.dto.UserInfo",
+        "object_id": 1434793773,
+        "value": "UserInfo(userId=U_00054, role=ADMIN)"
+      },
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.feign.FeignClientService",
+      "event": "call",
+      "id": 13,
+      "lineno": -1,
+      "method_id": "validateId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 370785774,
+          "value": "U_00054"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy230",
+        "object_id": 2015248446,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0045236,
+      "event": "return",
+      "id": 14,
+      "parent_id": 13,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1168324274,
+        "value": "true"
+      },
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.service.EventService",
+      "event": "call",
+      "id": 15,
+      "lineno": 39,
+      "method_id": "createEvent",
+      "parameters": [
+        {
+          "class": "com.abhijith.eventservice.dto.EventRequestDto",
+          "kind": "req",
+          "name": "eventRequestDto",
+          "object_id": 328355520,
+          "value": "EventRequestDto(eventTitle=Jump, eventDate=2024-08-08, meetId=M_0000, venue=London, category=300M, eventDescription=dummy)"
+        },
+        {
+          "class": "org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile",
+          "kind": "req",
+          "name": "photo",
+          "object_id": 580385703,
+          "value": "org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@2297fba7"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/service/EventService.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.service.EventService",
+        "object_id": 136837576,
+        "value": "com.abhijith.eventservice.service.EventService@827f9c8"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "event": "call",
+      "id": 16,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?"
+      },
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0000474,
+      "event": "return",
+      "id": 17,
+      "parent_id": 16,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0007932,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "com.abhijith.eventservice.exception.MeetNotFoundException",
+          "lineno": 50,
+          "message": "Meet ID not found: M_0000",
+          "object_id": 541964372,
+          "path": "EventService.java"
+        }
+      ],
+      "id": 18,
+      "parent_id": 15,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.006134,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "com.abhijith.eventservice.exception.MeetNotFoundException",
+          "lineno": 50,
+          "message": "Meet ID not found: M_0000",
+          "object_id": 541964372,
+          "path": "EventService.java"
+        }
+      ],
+      "id": 19,
+      "parent_id": 2,
+      "thread_id": 57
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.exception.GlobalExceptionHandler",
+      "event": "call",
+      "id": 20,
+      "lineno": 32,
+      "method_id": "handleMeetNotFoundException",
+      "parameters": [
+        {
+          "class": "com.abhijith.eventservice.exception.MeetNotFoundException",
+          "kind": "req",
+          "name": "ex",
+          "object_id": 541964372,
+          "value": "com.abhijith.eventservice.exception.MeetNotFoundException: Meet ID not found: M_0000"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/exception/GlobalExceptionHandler.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.exception.GlobalExceptionHandler",
+        "object_id": 1157246451,
+        "value": "com.abhijith.eventservice.exception.GlobalExceptionHandler@44fa2df3"
+      },
+      "static": false,
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0000097,
+      "event": "return",
+      "id": 21,
+      "parent_id": 20,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1579106226,
+        "value": "<404 NOT_FOUND Not Found,Meet ID not found: M_0000,[]>"
+      },
+      "thread_id": 57
+    },
+    {
+      "elapsed": 0.0087809,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Content-Length": "25",
+          "Date": "Fri, 30 Aug 2024 17:52:53 GMT",
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 404
+      },
+      "id": 22,
+      "parent_id": 1,
+      "thread_id": 57
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /event/create (404) - 23:22:53.518",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "30ee7fa24016da5603e86837dc4fa6077857f5ad"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateId",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/feign/FeignClientService.java:-1"
+                        }
+                      ],
+                      "name": "FeignClientService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "feign",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "createEvent",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:68"
+                        }
+                      ],
+                      "name": "EventController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "extractUserInfo",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/service/JwtService.java:17"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "createEvent",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/service/EventService.java:39"
+                        }
+                      ],
+                      "name": "EventService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java:22"
+                        },
+                        {
+                          "name": "getRoleFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java:52"
+                        },
+                        {
+                          "name": "getUserIdFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java:48"
+                        }
+                      ],
+                      "name": "JwtUtil",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "utils",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "valueOf",
+                          "type": "function",
+                          "static": true,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/dto/UserRole.java:3"
+                        }
+                      ],
+                      "name": "UserRole",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "dto",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "handleMeetNotFoundException",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/exception/GlobalExceptionHandler.java:32"
+                        }
+                      ],
+                      "name": "GlobalExceptionHandler",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "exception",
+                  "type": "package"
+                }
+              ],
+              "name": "eventservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /event/create"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?"
+        }
+      ]
+    }
+  ]
+}

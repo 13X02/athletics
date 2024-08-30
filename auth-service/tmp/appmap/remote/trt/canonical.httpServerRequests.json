@@ -1,0 +1,12 @@
+[
+  {
+    "route": "GET /error",
+    "parameters": "(athleteId)",
+    "status": 404
+  },
+  {
+    "route": "GET /wellness/recommendation",
+    "parameters": "(athleteId)",
+    "status": 404
+  }
+]

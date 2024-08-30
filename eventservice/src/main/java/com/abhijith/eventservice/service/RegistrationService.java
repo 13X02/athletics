@@ -2,8 +2,10 @@ package com.abhijith.eventservice.service;
 
 import com.abhijith.eventservice.dto.RegistrationRequestDto;
 import com.abhijith.eventservice.exception.AlreadyRegisteredException;
+import com.abhijith.eventservice.exception.AthleteNotFoundException;
 import com.abhijith.eventservice.exception.EventNotFoundException;
 import com.abhijith.eventservice.exception.RegistrationNotFoundException;
+import com.abhijith.eventservice.feign.FeignClientService;
 import com.abhijith.eventservice.model.Event;
 import com.abhijith.eventservice.model.Registration;
 import com.abhijith.eventservice.model.RegistrationStatus;
@@ -25,7 +27,14 @@ public class RegistrationService {
     @Autowired
     private EventRepository eventRepository;
 
+    @Autowired
+    private FeignClientService feignClientService;
+
     public Registration save(RegistrationRequestDto registrationRequestDto) {
+
+        if (!feignClientService.validateAthleteId(registrationRequestDto.getAthleteId())){
+            throw new AthleteNotFoundException("athlete not found");
+        }
 
         Optional<Event> event = eventRepository.findById(registrationRequestDto.getEventId());
         if (event.isPresent()) {
@@ -47,6 +56,10 @@ public class RegistrationService {
         return registrationRepository.findAllByStatus(RegistrationStatus.PENDING);
     }
     public List<Registration> findRegistrationsByAthlete(String athleteId){
+        if (!feignClientService.validateAthleteId(athleteId)){
+            throw new AthleteNotFoundException("athlete not found");
+        }
+
         return registrationRepository.findAllByAthleteId(athleteId);
     }
 

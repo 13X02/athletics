@@ -1,0 +1,3 @@
+[
+  "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?"
+]

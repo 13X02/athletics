@@ -31,4 +31,13 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleMeetNotFoundException(MeetNotFoundException ex) {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.NOT_FOUND);
     }
+    @ExceptionHandler(AuthorizationFailException.class)
+    public ResponseEntity<String> handleAuthorizationFailException(AuthorizationFailException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(AthleteNotFoundException.class)
+    public ResponseEntity<String> handleAthleteNotFoundException(AthleteNotFoundException ex) {
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 }

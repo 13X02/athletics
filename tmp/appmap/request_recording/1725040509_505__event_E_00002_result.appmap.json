@@ -1,0 +1,311 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "referer": "http://localhost:8901/swagger-ui/index.html",
+          "sec-fetch-site": "same-origin",
+          "accept-language": "en-GB,en",
+          "cookie": "JSESSIONID=9A3B55542B7F57C9F5E48622E83A93FD",
+          "accept": "*/*",
+          "sec-gpc": "1",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "host": "localhost:8901",
+          "connection": "keep-alive",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/event/{eventId}/result",
+        "path_info": "/event/E_00002/result",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.controller.EventController",
+      "event": "call",
+      "id": 2,
+      "lineno": 211,
+      "method_id": "getResultsByEvent",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventId",
+          "object_id": 457393696,
+          "value": "E_00002"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.controller.EventController",
+        "object_id": 869335753,
+        "value": "com.abhijith.eventservice.controller.EventController@33d102c9"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.service.ResultService",
+      "event": "call",
+      "id": 3,
+      "lineno": 59,
+      "method_id": "findResultByEventId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "eventId",
+          "object_id": 457393696,
+          "value": "E_00002"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.service.ResultService",
+        "object_id": 1902344837,
+        "value": "com.abhijith.eventservice.service.ResultService@71637a85"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "event": "call",
+      "id": 4,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select e1_0.event_id,e1_0.category,e1_0.event_date,e1_0.event_description,e1_0.event_title,m1_0.meet_id,m1_0.meet_name,m1_0.photo_url,e1_0.photo_url,e1_0.venue from event e1_0 left join meet m1_0 on m1_0.meet_id=e1_0.meet_meet_id where e1_0.event_id=?"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.000093,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.repo.ResultRepository",
+      "event": "call",
+      "id": 6,
+      "lineno": -1,
+      "method_id": "findAllByEvent",
+      "parameters": [
+        {
+          "class": "com.abhijith.eventservice.model.Event",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1994021386,
+          "value": "Event(eventId=E_00002, eventDate=2024-08-08, eventTitle=Jump, meet=Meet(meetId=M_00001, meetName=Olympics 2025, photoUrl=https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/activity%201.png), venue=London, category=30M, eventDescription=dummy, photoUrl=https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/5%20%281%29.jpeg)"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/repo/ResultRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy231",
+        "object_id": 1326078582,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@517ff4a0"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "event": "call",
+      "id": 7,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select r1_0.result_id,r1_0.comment,r1_0.event_event_id,r1_0.registration_registration_id,r1_0.score from result r1_0 where r1_0.event_event_id=?"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0000727,
+      "event": "return",
+      "id": 8,
+      "parent_id": 7,
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0189136,
+      "event": "return",
+      "id": 9,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.util.ArrayList",
+        "object_id": 1505943907,
+        "value": "[]"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0225458,
+      "event": "return",
+      "id": 10,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.util.ArrayList",
+        "object_id": 1505943907,
+        "value": "[]"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0226,
+      "event": "return",
+      "id": 11,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1916104072,
+        "value": "<200 OK OK,[],[]>"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0234912,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Keep-Alive": "timeout=60",
+          "Connection": "keep-alive",
+          "Date": "Fri, 30 Aug 2024 17:55:09 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 12,
+      "parent_id": 1,
+      "thread_id": 51
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /event/E_00002/result (200) - 23:25:09.505",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "30ee7fa24016da5603e86837dc4fa6077857f5ad"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findAllByEvent",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/repo/ResultRepository.java:-1"
+                        }
+                      ],
+                      "name": "ResultRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repo",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findResultByEventId",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java:59"
+                        }
+                      ],
+                      "name": "ResultService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getResultsByEvent",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:211"
+                        }
+                      ],
+                      "name": "EventController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                }
+              ],
+              "name": "eventservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /event/{eventId}/result"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select e1_0.event_id,e1_0.category,e1_0.event_date,e1_0.event_description,e1_0.event_title,m1_0.meet_id,m1_0.meet_name,m1_0.photo_url,e1_0.photo_url,e1_0.venue from event e1_0 left join meet m1_0 on m1_0.meet_id=e1_0.meet_meet_id where e1_0.event_id=?"
+        },
+        {
+          "type": "query",
+          "name": "select r1_0.result_id,r1_0.comment,r1_0.event_event_id,r1_0.registration_registration_id,r1_0.score from result r1_0 where r1_0.event_event_id=?"
+        }
+      ]
+    }
+  ]
+}

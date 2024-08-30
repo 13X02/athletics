@@ -1,0 +1,76 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "getEventById",
+                        "type": "function",
+                        "static": false,
+                        "location": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:90"
+                      }
+                    ],
+                    "name": "EventController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "getEventById",
+                        "type": "function",
+                        "static": false,
+                        "location": "eventservice/src/main/java/com/abhijith/eventservice/service/EventService.java:55"
+                      }
+                    ],
+                    "name": "EventService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              }
+            ],
+            "name": "eventservice",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /event/{id}"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select e1_0.event_id,e1_0.category,e1_0.event_date,e1_0.event_description,e1_0.event_title,m1_0.meet_id,m1_0.meet_name,m1_0.photo_url,e1_0.photo_url,e1_0.venue from event e1_0 left join meet m1_0 on m1_0.meet_id=e1_0.meet_meet_id where e1_0.event_id=?"
+      }
+    ]
+  }
+]

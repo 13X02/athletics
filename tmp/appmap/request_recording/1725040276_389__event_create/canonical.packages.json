@@ -1,0 +1,5 @@
+[
+  "com/abhijith/eventservice/controller",
+  "com/abhijith/eventservice/exception",
+  "com/abhijith/eventservice/service"
+]

@@ -1,0 +1,5 @@
+language: "java"
+name: "athletics"
+appmap_dir: "tmp/appmap"
+packages:
+- path: "com.abhijith"

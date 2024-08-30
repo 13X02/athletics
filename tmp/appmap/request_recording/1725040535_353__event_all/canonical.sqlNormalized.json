@@ -1,0 +1,4 @@
+[
+  "select e1_0.event_id,e1_0.category,e1_0.event_date,e1_0.event_description,e1_0.event_title,e1_0.meet_meet_id,e1_0.photo_url,e1_0.venue from event e1_0",
+  "select m1_0.meet_id,m1_0.meet_name,m1_0.photo_url from meet m1_0 where m1_0.meet_id=?"
+]

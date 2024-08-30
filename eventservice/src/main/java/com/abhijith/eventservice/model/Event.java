@@ -41,6 +41,8 @@ public class Event {
 
     private String eventDescription;
 
+    private String photoUrl;
+
 
 
 }

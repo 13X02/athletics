@@ -1,0 +1,468 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "161",
+          "cookie": "JSESSIONID=C816E9DFA0423CCFAC23CAC79BCC9CD3",
+          "x-forwarded-proto": "http",
+          "postman-token": "de3828de-e021-4e49-a6c3-da153cfbc942",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:51921\"",
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8902",
+          "content-type": "application/json",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "normalized_path_info": "/wellness/recommendation",
+        "path_info": "/wellness/recommendation",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.controller.WellNessController",
+      "event": "call",
+      "id": 2,
+      "lineno": 81,
+      "method_id": "getAIRecommendedDiet",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHead",
+          "object_id": 2031181475,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.controller.WellNessController",
+        "object_id": 215919198,
+        "value": "com.abhijith.wellness.controller.WellNessController@cdeaa5e"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.service.JwtService",
+      "event": "call",
+      "id": 3,
+      "lineno": 17,
+      "method_id": "extractUserInfo",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 2031181475,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.service.JwtService",
+        "object_id": 537525223,
+        "value": "com.abhijith.wellness.service.JwtService@2009fbe7"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 4,
+      "lineno": 21,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 591532197,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 7771954,
+        "value": "com.abhijith.wellness.util.JwtUtil@769732"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0061202,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 6,
+      "lineno": 47,
+      "method_id": "getUserIdFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 591532197,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 7771954,
+        "value": "com.abhijith.wellness.util.JwtUtil@769732"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0001477,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 2008648918,
+        "value": "U_00055"
+      },
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 8,
+      "lineno": 51,
+      "method_id": "getRoleFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 591532197,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNDM0MjksImV4cCI6MTcyNTA0NTIyOX0.sLryJM0hlceDw3w4S9wW1BLwjHupGNPVmjint2KLdPM"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 7771954,
+        "value": "com.abhijith.wellness.util.JwtUtil@769732"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0000807,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 748083504,
+        "value": "ATHLETE"
+      },
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.model.UserRole",
+      "event": "call",
+      "id": 10,
+      "lineno": 3,
+      "method_id": "valueOf",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "name",
+          "object_id": 748083504,
+          "value": "ATHLETE"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java",
+      "static": true,
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.model.UserRole",
+      "event": "call",
+      "id": 11,
+      "lineno": 3,
+      "method_id": "values",
+      "path": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java",
+      "static": true,
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0000157,
+      "event": "return",
+      "id": 12,
+      "parent_id": 11,
+      "return_value": {
+        "class": "[Lcom.abhijith.wellness.model.UserRole;",
+        "object_id": 1855723531,
+        "value": "[Lcom.abhijith.wellness.model.UserRole;@6e9c180b"
+      },
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0000452,
+      "event": "return",
+      "id": 13,
+      "parent_id": 10,
+      "return_value": {
+        "class": "com.abhijith.wellness.model.UserRole",
+        "object_id": 2020945686,
+        "value": "ATHLETE"
+      },
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0078104,
+      "event": "return",
+      "id": 14,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.wellness.model.UserInfo",
+        "object_id": 1744718602,
+        "value": "UserInfo(userId=U_00055, userRole=ATHLETE)"
+      },
+      "thread_id": 56
+    },
+    {
+      "defined_class": "com.abhijith.wellness.feign.FeignClientService",
+      "event": "call",
+      "id": 15,
+      "lineno": -1,
+      "method_id": "validateAthleteId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 2008648918,
+          "value": "U_00055"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy209",
+        "object_id": 1920517525,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0073702,
+      "event": "return",
+      "id": 16,
+      "parent_id": 15,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 149999847,
+        "value": "false"
+      },
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0196928,
+      "event": "return",
+      "id": 17,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1143885655,
+        "value": "<400 BAD_REQUEST Bad Request,[]>"
+      },
+      "thread_id": 56
+    },
+    {
+      "elapsed": 0.0258866,
+      "event": "return",
+      "http_server_response": {
+        "headers": {},
+        "status": 400
+      },
+      "id": 18,
+      "parent_id": 1,
+      "thread_id": 56
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /wellness/recommendation (400) - 00:29:31.565",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "30ee7fa24016da5603e86837dc4fa6077857f5ad"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getAIRecommendedDiet",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:81"
+                        }
+                      ],
+                      "name": "WellNessController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateAthleteId",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                        }
+                      ],
+                      "name": "FeignClientService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "feign",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getUserIdFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:47"
+                        },
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:21"
+                        },
+                        {
+                          "name": "getRoleFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:51"
+                        }
+                      ],
+                      "name": "JwtUtil",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "util",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "extractUserInfo",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java:17"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "valueOf",
+                          "type": "function",
+                          "static": true,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java:3"
+                        },
+                        {
+                          "name": "values",
+                          "type": "function",
+                          "static": true,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java:3"
+                        }
+                      ],
+                      "name": "UserRole",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "model",
+                  "type": "package"
+                }
+              ],
+              "name": "wellness",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /wellness/recommendation"
+        }
+      ]
+    }
+  ]
+}

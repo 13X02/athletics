@@ -1,0 +1,23 @@
+[
+  {
+    "class": "feign.FeignException$BadRequest",
+    "message": "[400 Bad Request] during [GET] to [http://localhost:8081/athletes/validate] [FeignClientService#validateAthleteId(String)]: [{\"timestamp\":\"2024-08-30T19:03:41.600+00:00\",\"status\":400,\"error\":\"Bad Request\",\"trace\":\"org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for metho... (5406 bytes)]",
+    "stack": [
+      "FeignException.java:222",
+      "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1",
+      "wellness/src/main/java/com/abhijith/wellness/service/DietService.java:68",
+      "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:81"
+    ],
+    "location": "FeignException.java:222"
+  },
+  {
+    "class": "feign.FeignException$BadRequest",
+    "message": "[400 Bad Request] during [GET] to [http://localhost:8081/athletes/validate] [FeignClientService#validateAthleteId(String)]: [{\"timestamp\":\"2024-08-30T19:03:41.600+00:00\",\"status\":400,\"error\":\"Bad Request\",\"trace\":\"org.springframework.web.bind.MissingServletRequestParameterException: Required request parameter 'id' for metho... (5406 bytes)]",
+    "stack": [
+      "FeignException.java:222",
+      "wellness/src/main/java/com/abhijith/wellness/service/DietService.java:68",
+      "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:81"
+    ],
+    "location": "FeignException.java:222"
+  }
+]
