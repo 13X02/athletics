@@ -25,6 +25,19 @@ spring:
             - Path=/wellness/**
           filters:
             - AuthenticationFilter
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://127.0.0.1:3000,http://127.0.0.1:3001"
+            allowedHeaders: "*"
+            allowedMethods:
+              - GET
+              - POST
+              - DELETE
+              - PUT
+              - OPTIONS
 
   application:
     name: athlete-gateway

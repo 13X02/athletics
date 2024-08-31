@@ -92,6 +92,10 @@ public class EventController {
             return new ResponseEntity<>(event, HttpStatus.OK);
 
     }
+    @GetMapping("/statistics")
+    public EventStatsResponse getEventStatistics() {
+        return eventService.getEventStatistics();
+    }
 
     // Registration Endpoints
     @PostMapping("/register")

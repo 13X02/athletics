@@ -17,12 +17,15 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.UUID;
 
 @Service
 public class AwsService {
 
     private final AmazonS3 s3Client;
-    BasicAWSCredentials credentials = new BasicAWSCredentials("d", "d//d/d");
+    BasicAWSCredentials credentials = new BasicAWSCredentials("j", "j+j/j/j");
 
     public AwsService() {
         this.s3Client = AmazonS3Client.builder()
@@ -37,11 +40,18 @@ public class AwsService {
 
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentLength(contentLength);
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMdd_HHmmss");
+        String dateTime = sdf.format(new Date());
+
+        // Generate a random UUID
+        String uuid = UUID.randomUUID().toString();
+        fileName = dateTime + "_" + uuid + "_" + fileName;
+
 
         // Use a ByteArrayInputStream instead of the original InputStream
         try (InputStream byteArrayInputStream = new ByteArrayInputStream(contentBytes)) {
-            s3Client.putObject(new PutObjectRequest("d", fileName, byteArrayInputStream, metadata));
-            return s3Client.getUrl("d", fileName).toString();
+            s3Client.putObject(new PutObjectRequest("j", fileName, byteArrayInputStream, metadata));
+            return s3Client.getUrl("j", fileName).toString();
         } catch (AmazonServiceException ase) {
             System.out.println("Error Message: " + ase.getMessage());
             System.out.println("HTTP Status Code: " + ase.getStatusCode());

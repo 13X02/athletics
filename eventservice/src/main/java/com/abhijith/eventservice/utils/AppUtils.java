@@ -56,7 +56,8 @@ public class AppUtils {
                 eventRequestDto.getVenue(),
                 eventRequestDto.getCategory(),
                 eventRequestDto.getEventDescription(),
-                photo
+                photo,
+                null
         );
     }
 
