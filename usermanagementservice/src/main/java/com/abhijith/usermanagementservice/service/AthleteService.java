@@ -129,7 +129,7 @@ public class AthleteService {
     }
 
     public String findAthleteByUserId(String userId) {
-        if(athleteRepository.existsById(userId)){
+        if(athleteRepository.existsByUserId(userId)){
             return athleteRepository.findByUserId(userId).get().getAthleteId();
         }
         return null;

@@ -1,0 +1,22 @@
+[
+  {
+    "caller": "POST /wellness/weight-plan",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "insert into weight_plan (athlete_id,daily_calorie_goal,preference,start_weight,target_weight,id) values (?,?,?,?,?,?)"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select next_val as id_val from weight_plan_seq for update"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select wp1_0.id,wp1_0.athlete_id,wp1_0.daily_calorie_goal,wp1_0.preference,wp1_0.start_weight,wp1_0.target_weight from weight_plan wp1_0 where wp1_0.athlete_id=?"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "update weight_plan_seq set next_val= ? where next_val=?"
+  }
+]

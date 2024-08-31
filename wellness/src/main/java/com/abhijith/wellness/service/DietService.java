@@ -71,7 +71,7 @@ public class DietService {
             return null;
         }
         String prompt = "Generate a dummy (not real) json response in the form {breakfast:String,lunch:String,dinner:String} for a person whose daily calorie goal is  "+weightPlan.get().getDailyCalorieGoal()+"and has preference of"+weightPlan.get().getPreference()+"food , only give json no other response";
-        String geminiKey = "AIzaSyDF5cl9sZH8KQ9sF2gcb5s3mW4CIV2yj10";
+        String geminiKey = "-";
         String apiUrl = String.format(API_URL_TEMPLATE, geminiKey);
 
         HttpHeaders headers = new HttpHeaders();

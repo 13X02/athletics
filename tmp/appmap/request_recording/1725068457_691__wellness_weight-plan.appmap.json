@@ -1,0 +1,723 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "161",
+          "cookie": "JSESSIONID=C816E9DFA0423CCFAC23CAC79BCC9CD3",
+          "x-forwarded-proto": "http",
+          "postman-token": "5b65ae7f-5cb7-46a7-afe4-7ee845d33dbb",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:52640\"",
+          "accept": "*/*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8902",
+          "content-type": "application/json",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "normalized_path_info": "/wellness/weight-plan",
+        "path_info": "/wellness/weight-plan",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.controller.WellNessController",
+      "event": "call",
+      "id": 2,
+      "lineno": 34,
+      "method_id": "createOrUpdateWeightPlan",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHead",
+          "object_id": 91893774,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q"
+        },
+        {
+          "class": "com.abhijith.wellness.model.WeightPlan",
+          "kind": "req",
+          "name": "weightPlan",
+          "object_id": 753419575,
+          "value": "WeightPlan(id=null, athleteId=acc1f492-8768-4429-9032-88707803a622, startWeight=50, targetWeight=60, preference=non veg, dailyCalorieGoal=1500)"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.controller.WellNessController",
+        "object_id": 2038229536,
+        "value": "com.abhijith.wellness.controller.WellNessController@797cea20"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.service.JwtService",
+      "event": "call",
+      "id": 3,
+      "lineno": 17,
+      "method_id": "extractUserInfo",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 91893774,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.service.JwtService",
+        "object_id": 144257869,
+        "value": "com.abhijith.wellness.service.JwtService@899334d"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 4,
+      "lineno": 21,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 760572909,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 652270960,
+        "value": "com.abhijith.wellness.util.JwtUtil@26e0dd70"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0003672,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 6,
+      "lineno": 47,
+      "method_id": "getUserIdFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 760572909,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 652270960,
+        "value": "com.abhijith.wellness.util.JwtUtil@26e0dd70"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0000961,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1541673326,
+        "value": "U_00055"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.util.JwtUtil",
+      "event": "call",
+      "id": 8,
+      "lineno": 51,
+      "method_id": "getRoleFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 760572909,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwNTUiLCJzdWIiOiJqYW5lX3MiLCJpYXQiOjE3MjUwNjg0NDQsImV4cCI6MTcyNTA3MDI0NH0.J3iSdcgXNeESc8-MPOyR2P3WzJr75x5DeMhPdUz-t3Q"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.util.JwtUtil",
+        "object_id": 652270960,
+        "value": "com.abhijith.wellness.util.JwtUtil@26e0dd70"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0001349,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1302911321,
+        "value": "ATHLETE"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.model.UserRole",
+      "event": "call",
+      "id": 10,
+      "lineno": 3,
+      "method_id": "valueOf",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "name",
+          "object_id": 1302911321,
+          "value": "ATHLETE"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java",
+      "static": true,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0000065,
+      "event": "return",
+      "id": 11,
+      "parent_id": 10,
+      "return_value": {
+        "class": "com.abhijith.wellness.model.UserRole",
+        "object_id": 667740901,
+        "value": "ATHLETE"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0007912,
+      "event": "return",
+      "id": 12,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.wellness.model.UserInfo",
+        "object_id": 957183145,
+        "value": "UserInfo(userId=U_00055, userRole=ATHLETE)"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.feign.FeignClientService",
+      "event": "call",
+      "id": 13,
+      "lineno": -1,
+      "method_id": "validateId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1541673326,
+          "value": "U_00055"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy209",
+        "object_id": 788574533,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0043385,
+      "event": "return",
+      "id": 14,
+      "parent_id": 13,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1936742050,
+        "value": "true"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.feign.FeignClientService",
+      "event": "call",
+      "id": 15,
+      "lineno": -1,
+      "method_id": "findAthleteByUserId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1541673326,
+          "value": "U_00055"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy209",
+        "object_id": 788574533,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.003426,
+      "event": "return",
+      "id": 16,
+      "parent_id": 15,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 829123522,
+        "value": "acc1f492-8768-4429-9032-88707803a622"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.service.DietService",
+      "event": "call",
+      "id": 17,
+      "lineno": 43,
+      "method_id": "createWeightPlan",
+      "parameters": [
+        {
+          "class": "com.abhijith.wellness.model.WeightPlan",
+          "kind": "req",
+          "name": "plan",
+          "object_id": 753419575,
+          "value": "WeightPlan(id=null, athleteId=acc1f492-8768-4429-9032-88707803a622, startWeight=50, targetWeight=60, preference=non veg, dailyCalorieGoal=1500)"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/service/DietService.java",
+      "receiver": {
+        "class": "com.abhijith.wellness.service.DietService",
+        "object_id": 958108077,
+        "value": "com.abhijith.wellness.service.DietService@391b91ad"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.feign.FeignClientService",
+      "event": "call",
+      "id": 18,
+      "lineno": -1,
+      "method_id": "validateAthleteId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 829123522,
+          "value": "acc1f492-8768-4429-9032-88707803a622"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy209",
+        "object_id": 788574533,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.027357,
+      "event": "return",
+      "id": 19,
+      "parent_id": 18,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1936742050,
+        "value": "true"
+      },
+      "thread_id": 62
+    },
+    {
+      "defined_class": "com.abhijith.wellness.repo.WeightPlanRepository",
+      "event": "call",
+      "id": 20,
+      "lineno": -1,
+      "method_id": "findByAthleteId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 829123522,
+          "value": "acc1f492-8768-4429-9032-88707803a622"
+        }
+      ],
+      "path": "wellness/src/main/java/com/abhijith/wellness/repo/WeightPlanRepository.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy198",
+        "object_id": 2136088015,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@3a58204b"
+      },
+      "static": false,
+      "thread_id": 62
+    },
+    {
+      "event": "call",
+      "id": 21,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select wp1_0.id,wp1_0.athlete_id,wp1_0.daily_calorie_goal,wp1_0.preference,wp1_0.start_weight,wp1_0.target_weight from weight_plan wp1_0 where wp1_0.athlete_id=?"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0000555,
+      "event": "return",
+      "id": 22,
+      "parent_id": 21,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0019835,
+      "event": "return",
+      "id": 23,
+      "parent_id": 20,
+      "return_value": {
+        "class": "java.util.Optional",
+        "object_id": 290625511,
+        "value": "Optional.empty"
+      },
+      "thread_id": 62
+    },
+    {
+      "event": "call",
+      "id": 24,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select next_val as id_val from weight_plan_seq for update"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0000179,
+      "event": "return",
+      "id": 25,
+      "parent_id": 24,
+      "thread_id": 62
+    },
+    {
+      "event": "call",
+      "id": 26,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "update weight_plan_seq set next_val= ? where next_val=?"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.000011,
+      "event": "return",
+      "id": 27,
+      "parent_id": 26,
+      "thread_id": 62
+    },
+    {
+      "event": "call",
+      "id": 28,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "insert into weight_plan (athlete_id,daily_calorie_goal,preference,start_weight,target_weight,id) values (?,?,?,?,?,?)"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0000362,
+      "event": "return",
+      "id": 29,
+      "parent_id": 28,
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0374827,
+      "event": "return",
+      "id": 30,
+      "parent_id": 17,
+      "return_value": {
+        "class": "com.abhijith.wellness.model.WeightPlan",
+        "object_id": 753419575,
+        "value": "WeightPlan(id=1, athleteId=acc1f492-8768-4429-9032-88707803a622, startWeight=50, targetWeight=60, preference=non veg, dailyCalorieGoal=1500)"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.046197,
+      "event": "return",
+      "id": 31,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 696713377,
+        "value": "<201 CREATED Created,WeightPlan(id=1, athleteId=acc1f492-8768-4429-9032-88707803a622, startWeight=50, targetWeight=60, preference=non veg, dailyCalorieGoal=1500),[]>"
+      },
+      "thread_id": 62
+    },
+    {
+      "elapsed": 0.0574662,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Date": "Sat, 31 Aug 2024 01:40:58 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 201
+      },
+      "id": 32,
+      "parent_id": 1,
+      "thread_id": 62
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /wellness/weight-plan (201) - 07:10:57.691",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "8c7e9867090a81ad0e6ef97abbaeb2586f28362b"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findAthleteByUserId",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                        },
+                        {
+                          "name": "validateAthleteId",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                        },
+                        {
+                          "name": "validateId",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                        }
+                      ],
+                      "name": "FeignClientService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "feign",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getUserIdFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:47"
+                        },
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:21"
+                        },
+                        {
+                          "name": "getRoleFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:51"
+                        }
+                      ],
+                      "name": "JwtUtil",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "util",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findByAthleteId",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/repo/WeightPlanRepository.java:-1"
+                        }
+                      ],
+                      "name": "WeightPlanRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repo",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "extractUserInfo",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java:17"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "createWeightPlan",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/service/DietService.java:43"
+                        }
+                      ],
+                      "name": "DietService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "valueOf",
+                          "type": "function",
+                          "static": true,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java:3"
+                        }
+                      ],
+                      "name": "UserRole",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "model",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "createOrUpdateWeightPlan",
+                          "type": "function",
+                          "static": false,
+                          "location": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:34"
+                        }
+                      ],
+                      "name": "WellNessController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                }
+              ],
+              "name": "wellness",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /wellness/weight-plan"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select wp1_0.id,wp1_0.athlete_id,wp1_0.daily_calorie_goal,wp1_0.preference,wp1_0.start_weight,wp1_0.target_weight from weight_plan wp1_0 where wp1_0.athlete_id=?"
+        },
+        {
+          "type": "query",
+          "name": "select next_val as id_val from weight_plan_seq for update"
+        },
+        {
+          "type": "query",
+          "name": "update weight_plan_seq set next_val= ? where next_val=?"
+        },
+        {
+          "type": "query",
+          "name": "insert into weight_plan (athlete_id,daily_calorie_goal,preference,start_weight,target_weight,id) values (?,?,?,?,?,?)"
+        }
+      ]
+    }
+  ]
+}

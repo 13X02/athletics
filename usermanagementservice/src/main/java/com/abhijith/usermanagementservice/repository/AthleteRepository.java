@@ -11,4 +11,5 @@ import java.util.Optional;
 public interface AthleteRepository extends JpaRepository<Athlete,String> {
     Optional<Athlete> findByUserId(String userId);
 
+    boolean existsByUserId(String userId);
 }
