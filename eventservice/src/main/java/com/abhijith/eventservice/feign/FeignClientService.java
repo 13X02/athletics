@@ -1,6 +1,8 @@
 package com.abhijith.eventservice.feign;
 
+import com.abhijith.eventservice.client.Athlete;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -13,4 +15,6 @@ public interface FeignClientService {
 
     @GetMapping("athletes/validate")
     public Boolean validateAthleteId(@RequestParam("id") String id);
+    @GetMapping("athletes/{id}")
+    public ResponseEntity<Athlete> getAthleteById(@PathVariable String id);
 }

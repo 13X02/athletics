@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface EventRepository extends JpaRepository<Event,String> {
 
-    @Query("SELECT e.createdDate, COUNT(e) FROM Event e GROUP BY e.createdDate")
+    @Query("SELECT e.createdAt, COUNT(e) FROM Event e GROUP BY e.createdAt")
     List<Object[]> countEventsByDate();
 }

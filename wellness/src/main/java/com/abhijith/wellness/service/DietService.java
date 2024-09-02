@@ -1,8 +1,10 @@
 package com.abhijith.wellness.service;
 
 import com.abhijith.wellness.exception.AthleteNotFoundException;
+import com.abhijith.wellness.exception.WeightPlanNotFoundException;
 import com.abhijith.wellness.feign.FeignClientService;
 import com.abhijith.wellness.model.DailyDiet;
+import com.abhijith.wellness.model.DietRecommendation;
 import com.abhijith.wellness.model.WeightPlan;
 import com.abhijith.wellness.repo.DailyDietRepository;
 import com.abhijith.wellness.repo.WeightPlanRepository;
@@ -64,26 +66,41 @@ public class DietService {
         return dailyDietRepository.save(diet);
     }
 
-    public String getAIRecommendedDiet(String athleteId) throws JsonProcessingException {
+    public DietRecommendation getAIRecommendedDiet(String athleteId) throws JsonProcessingException {
 
         Optional<WeightPlan> weightPlan = weightPlanRepository.findByAthleteId(athleteId);
-        if (weightPlan.isEmpty()){
-            return null;
+        if (weightPlan.isEmpty()) {
+            throw new WeightPlanNotFoundException();
         }
-        String prompt = "Generate a dummy (not real) json response in the form {breakfast:String,lunch:String,dinner:String} for a person whose daily calorie goal is  "+weightPlan.get().getDailyCalorieGoal()+"and has preference of"+weightPlan.get().getPreference()+"food , only give json no other response";
+
+        // Define the JSON schema (for reference in the prompt)
+        String jsonSchema = "{ \"type\": \"object\", \"properties\": { \"breakfast\": {\"type\": \"string\"}, \"lunch\": {\"type\": \"string\"}, \"dinner\": {\"type\": \"string\"} } }";
+
+        // Incorporate the schema into the prompt
+        String prompt = "Generate a dummy (not real) JSON response that follows this schema: " + jsonSchema +
+                " for a person whose daily calorie goal is " + weightPlan.get().getDailyCalorieGoal() +
+                " and has a preference for " + weightPlan.get().getPreference() + " food. Only provide JSON, no other response.";
+
         String geminiKey = "-";
         String apiUrl = String.format(API_URL_TEMPLATE, geminiKey);
 
         HttpHeaders headers = new HttpHeaders();
         headers.set("Content-Type", "application/json");
 
+        // Constructing the JSON request body
         ObjectMapper objectMapper = new ObjectMapper();
         ObjectNode contentNode = objectMapper.createObjectNode();
         ObjectNode partsNode = objectMapper.createObjectNode();
         partsNode.put("text", prompt);
         contentNode.set("parts", objectMapper.createArrayNode().add(partsNode));
+
+        // Adding the generationConfig with JSON mode
+        ObjectNode generationConfigNode = objectMapper.createObjectNode();
+        generationConfigNode.put("response_mime_type", "application/json");
+
         ObjectNode requestBodyNode = objectMapper.createObjectNode();
         requestBodyNode.set("contents", objectMapper.createArrayNode().add(contentNode));
+        requestBodyNode.set("generationConfig", generationConfigNode); // Enabling JSON mode
 
         String requestBody;
         try {
@@ -97,11 +114,18 @@ public class DietService {
         ResponseEntity<String> response = restTemplate.exchange(apiUrl, HttpMethod.POST, request, String.class);
         String responseBody = response.getBody();
 
-        ObjectMapper objectMapper1 = new ObjectMapper();
-        JsonNode rootNode = objectMapper1.readTree(responseBody);
-
+        // Parsing the API response to extract the JSON text from the nested structure
+        JsonNode rootNode = objectMapper.readTree(responseBody);
         JsonNode textNode = rootNode.path("candidates").get(0).path("content").path("parts").get(0).path("text");
-        String text = textNode.asText();
-        return text;
+
+        // Convert the text node (which is a JSON string) into an actual JSON object
+        String jsonString = textNode.asText();
+
+
+        // Deserialize the JSON response into DietPlanResponse class
+        DietRecommendation dietPlanResponse = objectMapper.readValue(jsonString, DietRecommendation.class);
+
+        return dietPlanResponse;
     }
+
 }

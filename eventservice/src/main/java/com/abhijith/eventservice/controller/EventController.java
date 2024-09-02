@@ -211,11 +211,11 @@ public class EventController {
     }
 
     @GetMapping("/{eventId}/result")
-    public ResponseEntity<List<Result>> getResultsByEvent(@PathVariable String eventId){
+    public ResponseEntity<List<ResultAthleteResponse>> getResultsByEvent(@PathVariable String eventId){
         return new ResponseEntity<>(resultService.findResultByEventId(eventId), HttpStatus.OK);
     }
     @GetMapping("/results")
-    public ResponseEntity<List<Result>> getAllResults(){
+    public ResponseEntity<List<Event>> getAllResults(){
         return new ResponseEntity<>(resultService.getAllResults(), HttpStatus.OK);
     }
 

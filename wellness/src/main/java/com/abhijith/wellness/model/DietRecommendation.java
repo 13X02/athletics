@@ -4,17 +4,11 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DietRecommendation {
 
-    @JsonProperty("breakfast")
     private String breakfast;
-
-    @JsonProperty("lunch")
     private String lunch;
-
-    @JsonProperty("dinner")
     private String dinner;
 
     // Getters and Setters
-
     public String getBreakfast() {
         return breakfast;
     }
@@ -41,7 +35,7 @@ public class DietRecommendation {
 
     @Override
     public String toString() {
-        return "DietRecommendation{" +
+        return "DietPlanResponse{" +
                 "breakfast='" + breakfast + '\'' +
                 ", lunch='" + lunch + '\'' +
                 ", dinner='" + dinner + '\'' +

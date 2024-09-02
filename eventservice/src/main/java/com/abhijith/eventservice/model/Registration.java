@@ -27,5 +27,5 @@ public class Registration {
     private String athleteId;
     private RegistrationStatus status;
     @ManyToOne
-    private Event eventId;
+    private Event event;
 }

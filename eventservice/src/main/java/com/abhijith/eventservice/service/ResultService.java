@@ -1,5 +1,8 @@
 package com.abhijith.eventservice.service;
 
+import com.abhijith.eventservice.client.Athlete;
+import com.abhijith.eventservice.dto.ResultAthleteResponse;
+import com.abhijith.eventservice.dto.ResultEventResponse;
 import com.abhijith.eventservice.dto.ResultRequestDto;
 import com.abhijith.eventservice.exception.AthleteNotFoundException;
 import com.abhijith.eventservice.exception.EventNotFoundException;
@@ -17,6 +20,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class ResultService {
@@ -51,17 +55,28 @@ public class ResultService {
         }
     }
 
-    public List<Result> getAllResults(){
-        return resultRepository.findAll();
+    public List<Event> getAllResults() {
+        return resultRepository.findAll().stream()
+                .map(result -> result.getRegistration().getEvent())  // Navigate through Registration to get Event
+                .distinct()  // Ensure unique events if needed
+                .collect(Collectors.toList());  // Collect the results into a list
     }
 
-    public List<Result> findResultByEventId(String eventId){
-        Optional<Event> event = eventRepository.findById(eventId);
-        if(event.isPresent()){
-            return resultRepository.findAllByEvent(event.get());
-        } else {
+
+    public List<ResultAthleteResponse> findResultByEventId(String eventId) {
+        Optional<Event> eventOptional = eventRepository.findById(eventId);
+        if (!eventOptional.isPresent()) {
             throw new EventNotFoundException(eventId);
         }
+
+        Event event = eventOptional.get();
+        List<Result> results = resultRepository.findAllByEvent(event);
+
+        return results.stream().map(result -> {
+            Registration registration = result.getRegistration();
+            Athlete athlete = feignClientService.getAthleteById(registration.getAthleteId()).getBody();
+            return new ResultAthleteResponse(athlete, event, result.getScore(), result.getComment());
+        }).collect(Collectors.toList());
     }
 
 

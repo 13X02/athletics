@@ -24,7 +24,8 @@ public class AppUtil {
                 athleteRequestDto.getWeight(),
                 athleteRequestDto.getCategory(),
                 null,
-                url
+                url,
+                null
         );
 
     }
@@ -58,7 +59,8 @@ public class AppUtil {
                 coachRequestDto.getCategory(),
                 new ArrayList<>(),
                 new ArrayList<>(),
-                url
+                url,
+                null
 
 
         );

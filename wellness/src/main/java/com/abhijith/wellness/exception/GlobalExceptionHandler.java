@@ -17,5 +17,9 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleAthleteNotFoundException(AthleteNotFoundException e) {
         return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
     }
+    @ExceptionHandler(WeightPlanNotFoundException.class)
+    public ResponseEntity<String> handleWeightPlanNotFoundException(WeightPlanNotFoundException e) {
+        return new ResponseEntity<>(e.getMessage(), HttpStatus.BAD_REQUEST);
+    }
 
 }

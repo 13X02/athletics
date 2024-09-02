@@ -1,10 +1,7 @@
 package com.abhijith.wellness.controller;
 
 import com.abhijith.wellness.feign.FeignClientService;
-import com.abhijith.wellness.model.DailyDiet;
-import com.abhijith.wellness.model.UserInfo;
-import com.abhijith.wellness.model.UserRole;
-import com.abhijith.wellness.model.WeightPlan;
+import com.abhijith.wellness.model.*;
 import com.abhijith.wellness.service.DietService;
 import com.abhijith.wellness.service.JwtService;
 import com.fasterxml.jackson.core.JsonProcessingException;
@@ -77,19 +74,18 @@ public class WellNessController {
     }
 
     @GetMapping("/recommendation")
-    public ResponseEntity<String> getAIRecommendedDiet(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead) {
+    public ResponseEntity<DietRecommendation> getAIRecommendedDiet(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead) {
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)){
                 try {
                     String athleteId = feignClientService.findAthleteByUserId(userInfo.getUserId());
 
-                    String recommendation = dietService.getAIRecommendedDiet(athleteId);
-                    return new ResponseEntity<>(recommendation, HttpStatus.OK);
+                    return new ResponseEntity<>(dietService.getAIRecommendedDiet(athleteId), HttpStatus.OK);
                 } catch (RuntimeException e) {
-                    return new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+                    return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
                 } catch (JsonProcessingException e) {
-                    return   new ResponseEntity<>(e.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+                    return   new ResponseEntity<>( HttpStatus.INTERNAL_SERVER_ERROR);
                 }
             }
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
@@ -97,6 +93,7 @@ public class WellNessController {
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
 
     }
+
 
 
 }

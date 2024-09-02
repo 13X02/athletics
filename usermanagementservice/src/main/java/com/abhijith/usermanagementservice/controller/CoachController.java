@@ -1,6 +1,7 @@
 package com.abhijith.usermanagementservice.controller;
 
 import com.abhijith.usermanagementservice.client.UserRole;
+import com.abhijith.usermanagementservice.dto.AnalysisResponseDto;
 import com.abhijith.usermanagementservice.dto.CoachRequestDto;
 import com.abhijith.usermanagementservice.dto.UserInfo;
 import com.abhijith.usermanagementservice.feign.FeignClientService;
@@ -183,5 +184,10 @@ public class CoachController {
         }
 
        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+    @GetMapping("/overview")
+    public ResponseEntity<AnalysisResponseDto> getAnalysisOverview() {
+        AnalysisResponseDto response = coachService.getAnalysis();
+        return ResponseEntity.ok(response);
     }
 }

@@ -1,5 +1,6 @@
 package com.abhijith.usermanagementservice.service;
 
+import com.abhijith.usermanagementservice.dto.AnalysisResponseDto;
 import com.abhijith.usermanagementservice.dto.CoachRequestDto;
 import com.abhijith.usermanagementservice.model.*;
 import com.abhijith.usermanagementservice.repository.AchievementsRepository;
@@ -12,7 +13,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 @Service
 public class CoachService {
@@ -35,7 +39,25 @@ public class CoachService {
         this.awsService = awsService;
         this.achievementsRepository = achievementsRepository;
     }
+    public AnalysisResponseDto getAnalysis() {
+        long totalAthletes = athleteRepository.count();
+        long totalCoaches = coachRepository.count();
 
+        List<Object[]> athletesData = athleteRepository.getAthletesGroupedByCreateDate();
+        List<Object[]> coachesData = coachRepository.getCoachesGroupedByCreateDate();
+
+        Map<Date, Long> athleteStats = athletesData.stream().collect(Collectors.toMap(
+                data -> (Date) data[0],
+                data -> (Long) data[1]
+        ));
+
+        Map<Date, Long> coachStats = coachesData.stream().collect(Collectors.toMap(
+                data -> (Date) data[0],
+                data -> (Long) data[1]
+        ));
+
+        return new AnalysisResponseDto(totalAthletes, totalCoaches, athleteStats, coachStats);
+    }
     public Coach createProfile(CoachRequestDto coachRequestDto, String userId, MultipartFile photo) throws IOException {
         String photoUrl = awsService.uploadFile(photo.getInputStream(), photo.getOriginalFilename());
         Coach coach = AppUtil.toCoach(coachRequestDto, userId, photoUrl);
