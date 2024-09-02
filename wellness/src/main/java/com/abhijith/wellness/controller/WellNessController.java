@@ -31,7 +31,7 @@ public class WellNessController {
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)){
-                String athleteId = feignClientService.findAthleteByUserId(userInfo.getUserId());
+                String athleteId = feignClientService.findAthleteIdByUserId(userInfo.getUserId());
                 weightPlan.setAthleteId(athleteId);
                 return new ResponseEntity<>(dietService.createWeightPlan(weightPlan), HttpStatus.CREATED);
 
@@ -48,7 +48,7 @@ public class WellNessController {
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)){
-                String athleteId = feignClientService.findAthleteByUserId(userInfo.getUserId());
+                String athleteId = feignClientService.findAthleteIdByUserId(userInfo.getUserId());
                 return new ResponseEntity<>(dietService.getDailyDietListById(athleteId), HttpStatus.OK);
 
             }
@@ -79,7 +79,7 @@ public class WellNessController {
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)){
                 try {
-                    String athleteId = feignClientService.findAthleteByUserId(userInfo.getUserId());
+                    String athleteId = feignClientService.findAthleteIdByUserId(userInfo.getUserId());
 
                     return new ResponseEntity<>(dietService.getAIRecommendedDiet(athleteId), HttpStatus.OK);
                 } catch (RuntimeException e) {

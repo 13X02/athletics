@@ -9,6 +9,7 @@ import com.abhijith.eventservice.exception.EventNotFoundException;
 import com.abhijith.eventservice.exception.RegistrationNotFoundException;
 import com.abhijith.eventservice.feign.FeignClientService;
 import com.abhijith.eventservice.model.Event;
+import com.abhijith.eventservice.model.EventStatus;
 import com.abhijith.eventservice.model.Registration;
 import com.abhijith.eventservice.model.Result;
 import com.abhijith.eventservice.repo.EventRepository;
@@ -18,6 +19,7 @@ import com.abhijith.eventservice.utils.AppUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -37,23 +39,30 @@ public class ResultService {
     @Autowired
     private FeignClientService feignClientService;
 
+    public List<Result> createResults(List<ResultRequestDto> resultRequestDtos) {
+        List<Result> results = new ArrayList<>();
 
-    public Result createResult(ResultRequestDto resultRequestDto){
-
-        Optional<Event> event = eventRepository.findById(resultRequestDto.getEventId());
-        if(event.isPresent()){
-            Optional<Registration> registration = registrationRepository.findById(resultRequestDto.getRegId());
-            if(registration.isPresent()){
-                Result result = AppUtils.toResult(resultRequestDto,event.get(),registration.get());
-                return resultRepository.save(result);
-            }else{
-                throw new RegistrationNotFoundException(resultRequestDto.getRegId());
+        for (ResultRequestDto resultRequestDto : resultRequestDtos) {
+            Optional<Event> event = eventRepository.findById(resultRequestDto.getEventId());
+            if (event.isPresent()) {
+                event.get().setStatus(EventStatus.COMPLETED);
+                eventRepository.save(event.get());
+                Optional<Registration> registration = registrationRepository.findById(resultRequestDto.getRegId());
+                if (registration.isPresent()) {
+                    Result result = AppUtils.toResult(resultRequestDto, event.get(), registration.get());
+                    results.add(result);
+                } else {
+                    throw new RegistrationNotFoundException(resultRequestDto.getRegId());
+                }
+            } else {
+                throw new EventNotFoundException(resultRequestDto.getEventId());
             }
-
-        }else {
-            throw new EventNotFoundException(resultRequestDto.getEventId());
         }
+
+        // Save all results at once
+        return resultRepository.saveAll(results);
     }
+
 
     public List<Event> getAllResults() {
         return resultRepository.findAll().stream()
@@ -88,5 +97,14 @@ public class ResultService {
         List<Result> results = resultRepository.findAll().stream().filter(e->e.getRegistration().getAthleteId().equals(athleteId)).toList();
         return results;
 
+    }
+
+    public List<Result> findResultByUserId(String userId) {
+        String athleteId =feignClientService.findAthleteIdByUserId(userId);
+        System.out.println(athleteId);
+        if(athleteId == null){
+            throw new AthleteNotFoundException("athlete not found");
+        }
+        return findResultByAthleteId(athleteId);
     }
 }

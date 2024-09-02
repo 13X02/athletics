@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /auth/exists/basil",
+    "parameters": "()",
+    "status": 405
+  }
+]

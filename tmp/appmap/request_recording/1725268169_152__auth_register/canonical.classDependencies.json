@@ -1,0 +1,18 @@
+[
+  {
+    "caller": "POST /auth/register",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "insert into user_credential (email,password,role,username,id) values (?,?,?,?,?)"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select next_val as id_val from res_seq for update"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "update res_seq set next_val= ? where next_val=?"
+  }
+]

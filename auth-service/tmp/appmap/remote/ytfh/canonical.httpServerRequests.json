@@ -1,0 +1,17 @@
+[
+  {
+    "route": "GET /athletes/fetchAthleteByUserId/{userId}",
+    "parameters": "()",
+    "status": 200
+  },
+  {
+    "route": "GET /athletes/findByUserId/{userId}",
+    "parameters": "()",
+    "status": 200
+  },
+  {
+    "route": "GET /athletes/validate",
+    "parameters": "(id)",
+    "status": 200
+  }
+]

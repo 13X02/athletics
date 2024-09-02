@@ -1,0 +1,301 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "referer": "http://localhost:3000/",
+          "content-length": "0",
+          "sec-fetch-site": "same-site",
+          "accept-language": "en-US,en;q=0.9",
+          "x-forwarded-proto": "http",
+          "origin": "http://localhost:3000",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:52830\"",
+          "accept": "application/json, text/plain, */*",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+          "sec-ch-ua-mobile": "?1",
+          "x-forwarded-host": "localhost:8081",
+          "sec-ch-ua-platform": "\"Android\"",
+          "host": "172.19.40.255:9899",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/auth/exists/{username}",
+        "path_info": "/auth/exists/basil",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 47
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.controller.AuthController",
+      "event": "call",
+      "id": 2,
+      "lineno": 51,
+      "method_id": "checkUsernameExists",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1042433303,
+          "value": "basil"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.controller.AuthController",
+        "object_id": 837354325,
+        "value": "com.abhijith.auth_service.controller.AuthController@31e90355"
+      },
+      "static": false,
+      "thread_id": 47
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.AuthService",
+      "event": "call",
+      "id": 3,
+      "lineno": 48,
+      "method_id": "checkUsernameExists",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1042433303,
+          "value": "basil"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.AuthService",
+        "object_id": 1948489841,
+        "value": "com.abhijith.auth_service.service.AuthService@74239871"
+      },
+      "static": false,
+      "thread_id": 47
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.repository.UserCredentialRepository",
+      "event": "call",
+      "id": 4,
+      "lineno": -1,
+      "method_id": "existsByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1042433303,
+          "value": "basil"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/repository/UserCredentialRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy190",
+        "object_id": 536676464,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@78b29a17"
+      },
+      "static": false,
+      "thread_id": 47
+    },
+    {
+      "event": "call",
+      "id": 5,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select uc1_0.id from user_credential uc1_0 where uc1_0.username=? limit ?"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00009957,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00060048,
+      "event": "return",
+      "id": 7,
+      "parent_id": 4,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 134130533,
+        "value": "false"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00060048,
+      "event": "return",
+      "id": 8,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 134130533,
+        "value": "false"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00070007,
+      "event": "return",
+      "id": 9,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 134130533,
+        "value": "false"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00139995,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Transfer-Encoding": "chunked",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "Access-Control-Allow-Origin": "http://localhost:3000",
+          "X-Content-Type-Options": "nosniff",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Date": "Mon, 02 Sep 2024 09:09:29 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 47
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /auth/exists/basil (200) - 14:39:29.020",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "9dc7814e59f21ab032901a592fa59db006b73508"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "checkUsernameExists",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:48"
+                        }
+                      ],
+                      "name": "AuthService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "checkUsernameExists",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java:51"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "existsByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/repository/UserCredentialRepository.java:-1"
+                        }
+                      ],
+                      "name": "UserCredentialRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repository",
+                  "type": "package"
+                }
+              ],
+              "name": "auth_service",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /auth/exists/{username}"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select uc1_0.id from user_credential uc1_0 where uc1_0.username=? limit ?"
+        }
+      ]
+    }
+  ]
+}

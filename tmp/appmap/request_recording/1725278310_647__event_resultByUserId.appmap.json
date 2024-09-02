@@ -1,0 +1,334 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "referer": "http://localhost:3000/",
+          "content-length": "0",
+          "sec-fetch-site": "same-site",
+          "accept-language": "en-US,en;q=0.9",
+          "x-forwarded-proto": "http",
+          "origin": "http://localhost:3000",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:62048\"",
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3NTI2NCwiZXhwIjoxNzI1Mjc3MDY0fQ.lxxgz9xHriANNHneN57jGAI4HjZYt6X_jGZuRB04nwA",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+          "sec-ch-ua-mobile": "?1",
+          "x-forwarded-host": "localhost:8081",
+          "sec-ch-ua-platform": "\"Android\"",
+          "host": "localhost:8901",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/event/resultByUserId",
+        "path_info": "/event/resultByUserId",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 44
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.controller.EventController",
+      "event": "call",
+      "id": 2,
+      "lineno": 237,
+      "method_id": "getResultsByUserId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHead",
+          "object_id": 258987124,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3NTI2NCwiZXhwIjoxNzI1Mjc3MDY0fQ.lxxgz9xHriANNHneN57jGAI4HjZYt6X_jGZuRB04nwA"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.controller.EventController",
+        "object_id": 1809840677,
+        "value": "com.abhijith.eventservice.controller.EventController@6bdffa25"
+      },
+      "static": false,
+      "thread_id": 44
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.service.JwtService",
+      "event": "call",
+      "id": 3,
+      "lineno": 17,
+      "method_id": "extractUserInfo",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 258987124,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3NTI2NCwiZXhwIjoxNzI1Mjc3MDY0fQ.lxxgz9xHriANNHneN57jGAI4HjZYt6X_jGZuRB04nwA"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.service.JwtService",
+        "object_id": 1414204370,
+        "value": "com.abhijith.eventservice.service.JwtService@544b0bd2"
+      },
+      "static": false,
+      "thread_id": 44
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.utils.JwtUtil",
+      "event": "call",
+      "id": 4,
+      "lineno": 22,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 1226662221,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3NTI2NCwiZXhwIjoxNzI1Mjc3MDY0fQ.lxxgz9xHriANNHneN57jGAI4HjZYt6X_jGZuRB04nwA"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.utils.JwtUtil",
+        "object_id": 858107836,
+        "value": "com.abhijith.eventservice.utils.JwtUtil@3325afbc"
+      },
+      "static": false,
+      "thread_id": 44
+    },
+    {
+      "elapsed": 0.00040023,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "io.jsonwebtoken.ExpiredJwtException",
+          "lineno": 427,
+          "message": "JWT expired at 2024-09-02T11:37:44Z. Current time: 2024-09-02T11:58:30Z, a difference of 1246656 milliseconds.  Allowed clock skew: 0 milliseconds.",
+          "object_id": 359256023,
+          "path": "DefaultJwtParser.java"
+        }
+      ],
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 44
+    },
+    {
+      "elapsed": 0.0007002,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "com.abhijith.eventservice.exception.AuthorizationFailException",
+          "lineno": 26,
+          "message": "Invalid token",
+          "object_id": 1080365592,
+          "path": "JwtService.java"
+        }
+      ],
+      "id": 6,
+      "parent_id": 3,
+      "thread_id": 44
+    },
+    {
+      "elapsed": 0.00100029,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "com.abhijith.eventservice.exception.AuthorizationFailException",
+          "lineno": 26,
+          "message": "Invalid token",
+          "object_id": 1080365592,
+          "path": "JwtService.java"
+        }
+      ],
+      "id": 7,
+      "parent_id": 2,
+      "thread_id": 44
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.exception.GlobalExceptionHandler",
+      "event": "call",
+      "id": 8,
+      "lineno": 36,
+      "method_id": "handleAuthorizationFailException",
+      "parameters": [
+        {
+          "class": "com.abhijith.eventservice.exception.AuthorizationFailException",
+          "kind": "req",
+          "name": "ex",
+          "object_id": 1080365592,
+          "value": "com.abhijith.eventservice.exception.AuthorizationFailException: Invalid token"
+        }
+      ],
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/exception/GlobalExceptionHandler.java",
+      "receiver": {
+        "class": "com.abhijith.eventservice.exception.GlobalExceptionHandler",
+        "object_id": 1428288547,
+        "value": "com.abhijith.eventservice.exception.GlobalExceptionHandler@5521f423"
+      },
+      "static": false,
+      "thread_id": 44
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 1773632809,
+        "value": "<401 UNAUTHORIZED Unauthorized,Invalid token,[]>"
+      },
+      "thread_id": 44
+    },
+    {
+      "elapsed": 0.00160059,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Content-Length": "13",
+          "Date": "Mon, 02 Sep 2024 11:58:30 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 401
+      },
+      "id": 10,
+      "parent_id": 1,
+      "thread_id": 44
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /event/resultByUserId (401) - 17:28:30.647",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "9dc7814e59f21ab032901a592fa59db006b73508"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getResultsByUserId",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:237"
+                        }
+                      ],
+                      "name": "EventController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "handleAuthorizationFailException",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/exception/GlobalExceptionHandler.java:36"
+                        }
+                      ],
+                      "name": "GlobalExceptionHandler",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "exception",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "extractUserInfo",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/service/JwtService.java:17"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java:22"
+                        }
+                      ],
+                      "name": "JwtUtil",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "utils",
+                  "type": "package"
+                }
+              ],
+              "name": "eventservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /event/resultByUserId"
+        }
+      ]
+    }
+  ]
+}

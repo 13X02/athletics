@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /event/resultByUserId",
+    "parameters": "()",
+    "status": 400
+  }
+]

@@ -1,0 +1,196 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "referer": "http://localhost:3000/",
+          "content-length": "0",
+          "sec-fetch-site": "same-site",
+          "accept-language": "en-US,en;q=0.9",
+          "x-forwarded-proto": "http",
+          "origin": "http://localhost:3000",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:62044\"",
+          "accept": "application/json, text/plain, */*",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+          "sec-ch-ua-mobile": "?1",
+          "x-forwarded-host": "localhost:8081",
+          "sec-ch-ua-platform": "\"Android\"",
+          "host": "localhost:8901",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/event/statistics",
+        "path_info": "/event/statistics",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 46
+    },
+    {
+      "event": "call",
+      "id": 2,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select count(*) from event e1_0"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00009999,
+      "event": "return",
+      "id": 3,
+      "parent_id": 2,
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.eventservice.repo.EventRepository",
+      "event": "call",
+      "id": 4,
+      "lineno": -1,
+      "method_id": "countEventsByDate",
+      "path": "eventservice/src/main/java/com/abhijith/eventservice/repo/EventRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy216",
+        "object_id": 1378931071,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@7a97ab82"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "event": "call",
+      "id": 5,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select e1_0.created_at,count(e1_0.event_id) from event e1_0 group by e1_0.created_at"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00030026,
+      "event": "return",
+      "id": 7,
+      "parent_id": 4,
+      "return_value": {
+        "class": "java.util.ArrayList",
+        "object_id": 418425783,
+        "value": "[[Ljava.lang.Object;@a11f9ae]"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00129945,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Date": "Mon, 02 Sep 2024 11:58:49 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 8,
+      "parent_id": 1,
+      "thread_id": 46
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /event/statistics (200) - 17:28:49.962",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "9dc7814e59f21ab032901a592fa59db006b73508"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "countEventsByDate",
+                          "type": "function",
+                          "static": false,
+                          "location": "eventservice/src/main/java/com/abhijith/eventservice/repo/EventRepository.java:-1"
+                        }
+                      ],
+                      "name": "EventRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repo",
+                  "type": "package"
+                }
+              ],
+              "name": "eventservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /event/statistics"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select count(*) from event e1_0"
+        },
+        {
+          "type": "query",
+          "name": "select e1_0.created_at,count(e1_0.event_id) from event e1_0 group by e1_0.created_at"
+        }
+      ]
+    }
+  ]
+}

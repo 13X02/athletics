@@ -94,6 +94,7 @@ public class AthleteService {
             if (url != null) {
                 athlete.setPhotoUrl(url);
             }
+            System.out.println(athleteRequestDto);
 
             return athleteRepository.save(athlete);
 
@@ -128,9 +129,17 @@ public class AthleteService {
         return athleteRepository.existsById(id);
     }
 
-    public String findAthleteByUserId(String userId) {
+    public String findAthleteIdByUserId(String userId) {
         if(athleteRepository.existsByUserId(userId)){
             return athleteRepository.findByUserId(userId).get().getAthleteId();
+        }
+        return null;
+    }
+
+    public Athlete findAthleteByUserId(String userId) {
+
+        if(athleteRepository.existsByUserId(userId)){
+            return athleteRepository.findByUserId(userId).get();
         }
         return null;
     }

@@ -38,7 +38,7 @@ public class RegistrationService {
 
         Optional<Event> event = eventRepository.findById(registrationRequestDto.getEventId());
         if (event.isPresent()) {
-            Optional<Registration> registration = registrationRepository.findByEventIdAndAthleteId(event,registrationRequestDto.getAthleteId());
+            Optional<Registration> registration = registrationRepository.findByEventAndAthleteId(event,registrationRequestDto.getAthleteId());
             if (registration.isPresent()) {
                 throw new AlreadyRegisteredException(registrationRequestDto.getAthleteId());
             }else {
@@ -85,7 +85,7 @@ public class RegistrationService {
     public List<Registration> getRegistrationByEvent(String id) {
         Optional<Event> event = eventRepository.findById(id);
         if(event.isPresent()) {
-            return registrationRepository.findAllByEventIdAndStatus(event.get(), RegistrationStatus.PENDING);
+            return registrationRepository.findAllByEventAndStatus(event.get(), RegistrationStatus.PENDING);
         }else {
             throw new EventNotFoundException(id);
         }

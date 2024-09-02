@@ -57,7 +57,8 @@ public class AppUtils {
                 eventRequestDto.getCategory(),
                 eventRequestDto.getEventDescription(),
                 photo,
-                null
+                null,
+                EventStatus.STARTED
         );
     }
 
@@ -96,7 +97,7 @@ public class AppUtils {
         }
 
         return new RegistrationRequestDto(
-                registration.getEventId().getEventId(),
+                registration.getEvent().getEventId(),
                 registration.getAthleteId()
         );
     }

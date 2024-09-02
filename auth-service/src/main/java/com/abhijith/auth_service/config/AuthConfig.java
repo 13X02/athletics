@@ -28,7 +28,7 @@ public class AuthConfig {
         return http.csrf().disable()
                 .cors().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/register","/auth/login","/auth/validateId/**").permitAll()
+                .requestMatchers("/auth/**").permitAll()
                 .and()
                 .authorizeHttpRequests()
                 .anyRequest()

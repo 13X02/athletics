@@ -46,6 +46,16 @@ public class AuthController {
         return "Token is valid";
     }
 
+    @GetMapping("/exists/{username}")
+    public boolean checkUsernameExists(@PathVariable("username") String username) {
+        return service.checkUsernameExists(username);
+    }
+
+    @GetMapping("/existsby/{email}")
+    public boolean checkEmailExists(@PathVariable("email") String email) {
+        return service.checkEmailExists(email);
+    }
+
     @GetMapping("/validateId")
     public Boolean validateId(@RequestParam("id") String id) {
         return service.validateId(id);

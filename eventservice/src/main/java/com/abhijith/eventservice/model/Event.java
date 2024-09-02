@@ -48,6 +48,8 @@ public class Event {
     @CreationTimestamp
     private Date createdAt;
 
+    private EventStatus status;
+
 
 
 }

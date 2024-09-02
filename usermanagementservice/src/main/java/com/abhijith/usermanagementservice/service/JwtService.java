@@ -20,8 +20,8 @@ public class JwtService {
                 jwtUtil.validateToken(token);
                 String userId = jwtUtil.getUserIdFromToken(token);
                 String role = jwtUtil.getRoleFromToken(token);
-                // Use userId and role as needed
                 return new UserInfo(userId, UserRole.valueOf(role));
+
             } catch (Exception e) {
                 throw new AuthorizationFailException("Invalid token");
             }

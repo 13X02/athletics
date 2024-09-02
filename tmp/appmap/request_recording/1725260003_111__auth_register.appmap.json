@@ -1,0 +1,460 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "104",
+          "cookie": "JSESSIONID=3488C0261C8B9EC235E1D6109BCC69D2",
+          "x-forwarded-proto": "http",
+          "postman-token": "b738086e-9f97-484d-bf77-58f3c0710d96",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:65347\"",
+          "accept": "*/*",
+          "x-forwarded-host": "localhost:8081",
+          "host": "172.19.40.255:9899",
+          "content-type": "application/json",
+          "cache-control": "no-cache",
+          "accept-encoding": "gzip, deflate, br",
+          "user-agent": "PostmanRuntime/7.41.2"
+        },
+        "normalized_path_info": "/auth/register",
+        "path_info": "/auth/register",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.controller.AuthController",
+      "event": "call",
+      "id": 2,
+      "lineno": 28,
+      "method_id": "addNewUser",
+      "parameters": [
+        {
+          "class": "com.abhijith.auth_service.entity.UserCredential",
+          "kind": "req",
+          "name": "user",
+          "object_id": 1437836507,
+          "value": "UserCredential(id=null, username=admin, email=admin@admin.com, password=admin, role=ADMIN)"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.controller.AuthController",
+        "object_id": 861580410,
+        "value": "com.abhijith.auth_service.controller.AuthController@335aac7a"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.AuthService",
+      "event": "call",
+      "id": 3,
+      "lineno": 23,
+      "method_id": "saveUser",
+      "parameters": [
+        {
+          "class": "com.abhijith.auth_service.entity.UserCredential",
+          "kind": "req",
+          "name": "credential",
+          "object_id": 1437836507,
+          "value": "UserCredential(id=null, username=admin, email=admin@admin.com, password=$2a$10$eies1DUxhZmSWh1eLHjuYuTfuZQzY1Q66iSZ44rtPWm03UZcigbLW, role=ADMIN)"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.AuthService",
+        "object_id": 1622943130,
+        "value": "com.abhijith.auth_service.service.AuthService@60bc259a"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.util.StringPrefixedSequenceIdGenerator",
+      "event": "call",
+      "id": 4,
+      "lineno": 34,
+      "method_id": "generate",
+      "parameters": [
+        {
+          "class": "org.hibernate.internal.SessionImpl",
+          "kind": "req",
+          "name": "session",
+          "object_id": 554534111,
+          "value": "SessionImpl(554534111<open>)"
+        },
+        {
+          "class": "com.abhijith.auth_service.entity.UserCredential",
+          "kind": "req",
+          "name": "object",
+          "object_id": 1437836507,
+          "value": "UserCredential(id=null, username=admin, email=admin@admin.com, password=$2a$10$eies1DUxhZmSWh1eLHjuYuTfuZQzY1Q66iSZ44rtPWm03UZcigbLW, role=ADMIN)"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/util/StringPrefixedSequenceIdGenerator.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.util.StringPrefixedSequenceIdGenerator",
+        "object_id": 1692142175,
+        "value": "com.abhijith.auth_service.util.StringPrefixedSequenceIdGenerator@64dc0a5f"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "event": "call",
+      "id": 5,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select next_val as id_val from res_seq for update"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.01380068,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 46
+    },
+    {
+      "event": "call",
+      "id": 7,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "update res_seq set next_val= ? where next_val=?"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.0001007,
+      "event": "return",
+      "id": 8,
+      "parent_id": 7,
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.01909982,
+      "event": "return",
+      "id": 9,
+      "parent_id": 4,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 886616216,
+        "value": "U_00001"
+      },
+      "thread_id": 46
+    },
+    {
+      "event": "call",
+      "id": 10,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "insert into user_credential (email,password,role,username,id) values (?,?,?,?,?)"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00009957,
+      "event": "return",
+      "id": 11,
+      "parent_id": 10,
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.05150099,
+      "event": "return",
+      "id": 12,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.auth_service.entity.UserCredential",
+        "object_id": 1437836507,
+        "value": "UserCredential(id=U_00001, username=admin, email=admin@admin.com, password=$2a$10$eies1DUxhZmSWh1eLHjuYuTfuZQzY1Q66iSZ44rtPWm03UZcigbLW, role=ADMIN)"
+      },
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.AuthService",
+      "event": "call",
+      "id": 13,
+      "lineno": 35,
+      "method_id": "generateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1225782610,
+          "value": "admin"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 886616216,
+          "value": "U_00001"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "role",
+          "object_id": 1479237541,
+          "value": "ADMIN"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.AuthService",
+        "object_id": 1622943130,
+        "value": "com.abhijith.auth_service.service.AuthService@60bc259a"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.JwtService",
+      "event": "call",
+      "id": 14,
+      "lineno": 28,
+      "method_id": "generateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userName",
+          "object_id": 1225782610,
+          "value": "admin"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 886616216,
+          "value": "U_00001"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "role",
+          "object_id": 1479237541,
+          "value": "ADMIN"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.JwtService",
+        "object_id": 232479158,
+        "value": "com.abhijith.auth_service.service.JwtService@ddb59b6"
+      },
+      "static": false,
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00479901,
+      "event": "return",
+      "id": 15,
+      "parent_id": 14,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 611374534,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDAxIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MjUyNjAwMDMsImV4cCI6MTcyNTI2MTgwM30.UzHWGpuGVildL17s5pzFq084RQQxECHykXqR9IZ8ZF8"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.00489948,
+      "event": "return",
+      "id": 16,
+      "parent_id": 13,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 611374534,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDAxIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MjUyNjAwMDMsImV4cCI6MTcyNTI2MTgwM30.UzHWGpuGVildL17s5pzFq084RQQxECHykXqR9IZ8ZF8"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.06130049,
+      "event": "return",
+      "id": 17,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 611374534,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQURNSU4iLCJ1c2VySWQiOiJVXzAwMDAxIiwic3ViIjoiYWRtaW4iLCJpYXQiOjE3MjUyNjAwMDMsImV4cCI6MTcyNTI2MTgwM30.UzHWGpuGVildL17s5pzFq084RQQxECHykXqR9IZ8ZF8"
+      },
+      "thread_id": 46
+    },
+    {
+      "elapsed": 0.07160073,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "X-Content-Type-Options": "nosniff",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Content-Length": "176",
+          "Date": "Mon, 02 Sep 2024 06:53:23 GMT",
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        "status": 200
+      },
+      "id": 18,
+      "parent_id": 1,
+      "thread_id": 46
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /auth/register (200) - 12:23:23.111",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "9dc7814e59f21ab032901a592fa59db006b73508"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "generateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/JwtService.java:28"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "saveUser",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:23"
+                        },
+                        {
+                          "name": "generateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:35"
+                        }
+                      ],
+                      "name": "AuthService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "addNewUser",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java:28"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "generate",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/util/StringPrefixedSequenceIdGenerator.java:34"
+                        }
+                      ],
+                      "name": "StringPrefixedSequenceIdGenerator",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "util",
+                  "type": "package"
+                }
+              ],
+              "name": "auth_service",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /auth/register"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select next_val as id_val from res_seq for update"
+        },
+        {
+          "type": "query",
+          "name": "update res_seq set next_val= ? where next_val=?"
+        },
+        {
+          "type": "query",
+          "name": "insert into user_credential (email,password,role,username,id) values (?,?,?,?,?)"
+        }
+      ]
+    }
+  ]
+}

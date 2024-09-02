@@ -1,0 +1,6 @@
+[
+  "com/abhijith/eventservice/controller/EventController",
+  "com/abhijith/eventservice/exception/GlobalExceptionHandler",
+  "com/abhijith/eventservice/service/JwtService",
+  "com/abhijith/eventservice/utils/JwtUtil"
+]

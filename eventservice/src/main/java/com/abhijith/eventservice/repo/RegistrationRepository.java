@@ -16,7 +16,7 @@ public interface RegistrationRepository extends JpaRepository<Registration,Strin
     List<Registration> findAllByAthleteId(String athleteId);
 
 
-    List<Registration> findAllByEventIdAndStatus(Event event, RegistrationStatus registrationStatus);
+    List<Registration> findAllByEventAndStatus(Event event, RegistrationStatus registrationStatus);
 
-    Optional<Registration> findByEventIdAndAthleteId(Optional<Event> event, String athleteId);
+    Optional<Registration> findByEventAndAthleteId(Optional<Event> event, String athleteId);
 }

@@ -44,6 +44,14 @@ public class EventController {
     @Autowired
     private ResultService resultService;
 
+    @GetMapping("/inprogress")
+    public ResponseEntity<List<EventResponseDto>> getInProgressEvents() {
+        List<Event> inProgressEvents = eventService.getInProgressEvents();
+        List<EventResponseDto> eventResponse = new ArrayList<>();
+        eventResponse= inProgressEvents.stream().map(AppUtils::toEventResponse).toList();
+        return new ResponseEntity<>(eventResponse, HttpStatus.OK);
+    }
+
 
     // Event Endpoints
     @GetMapping("/all")
@@ -197,12 +205,12 @@ public class EventController {
     }
 
     @PostMapping("/result")
-    public ResponseEntity<Result> createResult(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead,@RequestBody ResultRequestDto resultRequestDto){
+    public ResponseEntity<List<Result>> createResult(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead,@RequestBody List<ResultRequestDto> resultRequestDto){
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
 
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getRole().equals(UserRole.ADMIN)){
-                return new ResponseEntity<>(resultService.createResult(resultRequestDto), HttpStatus.OK);
+                return new ResponseEntity<>(resultService.createResults(resultRequestDto), HttpStatus.OK);
             }else {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             }
@@ -222,6 +230,20 @@ public class EventController {
     @GetMapping("/results/{athleteId}")
     public ResponseEntity<List<Result>> getResultsByAthlete(@PathVariable String athleteId){
         return new ResponseEntity<>(resultService.findResultByAthleteId(athleteId),HttpStatus.OK);
+    }
+
+    @GetMapping("/resultByUserId")
+    public ResponseEntity<List<Result>> getResultsByUserId(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHead){
+        UserInfo userInfo = jwtService.extractUserInfo(authHead);
+
+        if (feignClientService.validateId(userInfo.getUserId())){
+            if (userInfo.getRole().equals(UserRole.ATHLETE)){
+                return new ResponseEntity<>(resultService.findResultByUserId(userInfo.getUserId()), HttpStatus.OK);
+            } else {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
 
 

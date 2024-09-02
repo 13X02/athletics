@@ -1,0 +1,32 @@
+[
+  {
+    "class": "com.abhijith.eventservice.exception.AthleteNotFoundException",
+    "message": "athlete not found",
+    "stack": [
+      "ResultService.java:94",
+      "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:237"
+    ],
+    "location": "ResultService.java:94"
+  },
+  {
+    "class": "com.abhijith.eventservice.exception.AthleteNotFoundException",
+    "message": "athlete not found",
+    "stack": [
+      "ResultService.java:94",
+      "eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java:103",
+      "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:237"
+    ],
+    "location": "ResultService.java:94"
+  },
+  {
+    "class": "com.abhijith.eventservice.exception.AthleteNotFoundException",
+    "message": "athlete not found",
+    "stack": [
+      "ResultService.java:94",
+      "eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java:93",
+      "eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java:103",
+      "eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java:237"
+    ],
+    "location": "ResultService.java:94"
+  }
+]

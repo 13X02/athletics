@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "GET /auth/validateId",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select count(*) from user_credential uc1_0 where uc1_0.id=?"
+  }
+]

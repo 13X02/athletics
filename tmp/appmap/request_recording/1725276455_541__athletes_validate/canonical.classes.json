@@ -1,0 +1,4 @@
+[
+  "com/abhijith/usermanagementservice/controller/AthleteController",
+  "com/abhijith/usermanagementservice/service/AthleteService"
+]

@@ -43,4 +43,12 @@ public class AuthService {
     public Boolean validateId(String id) {
         return repository.existsById(id);
     }
+
+    public boolean checkUsernameExists(String username) {
+        return repository.existsByUsername(username);
+    }
+
+    public boolean checkEmailExists(String email) {
+        return repository.existsByEmail(email);
+    }
 }

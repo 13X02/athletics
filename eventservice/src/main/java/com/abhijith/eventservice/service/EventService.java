@@ -5,6 +5,7 @@ import com.abhijith.eventservice.dto.EventStatsResponse;
 import com.abhijith.eventservice.exception.EventNotFoundException;
 import com.abhijith.eventservice.exception.MeetNotFoundException;
 import com.abhijith.eventservice.model.Event;
+import com.abhijith.eventservice.model.EventStatus;
 import com.abhijith.eventservice.model.Meet;
 import com.abhijith.eventservice.repo.EventRepository;
 import com.abhijith.eventservice.repo.MeetRepositoy;
@@ -44,10 +45,10 @@ public class EventService {
         Optional<Meet> meet = meetRepositoy.findById(eventRequestDto.getMeetId());
         if (meet.isPresent()) {
             // Upload the photo to AWS S3
-//            String photoUrl = awsService.uploadFile(photo.getInputStream(), photo.getOriginalFilename());
+            String photoUrl = awsService.uploadFile(photo.getInputStream(), photo.getOriginalFilename());
 
             // Create the Event entity with the photo URL
-            Event event = AppUtils.toEvent(eventRequestDto, meet.get(),"photoUrl");
+            Event event = AppUtils.toEvent(eventRequestDto, meet.get(),photoUrl);
 
             // Save and return the event
             return eventRepository.save(event);
@@ -82,5 +83,10 @@ public class EventService {
         }
 
         return new EventStatsResponse(totalEvents, dailyEventCounts);
+    }
+
+    public List<Event> getInProgressEvents() {
+
+        return eventRepository.findAllByStatus(EventStatus.STARTED);
     }
 }

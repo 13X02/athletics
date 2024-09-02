@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /auth/existsby/{email}",
+    "parameters": "()",
+    "status": 200
+  }
+]

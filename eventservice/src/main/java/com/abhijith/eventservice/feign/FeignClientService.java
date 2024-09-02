@@ -13,8 +13,10 @@ public interface FeignClientService {
     @GetMapping("auth/validateId")
     public Boolean validateId(@RequestParam("id") String id);
 
-    @GetMapping("athletes/validate")
-    public Boolean validateAthleteId(@RequestParam("id") String id);
+    @GetMapping("athletes/validate/{id}")
+    public Boolean validateAthleteId(@PathVariable("id") String id) ;
     @GetMapping("athletes/{id}")
     public ResponseEntity<Athlete> getAthleteById(@PathVariable String id);
+    @GetMapping("athletes/findByUserId/{userId}")
+    public String findAthleteIdByUserId(@PathVariable("userId") String userId);
 }

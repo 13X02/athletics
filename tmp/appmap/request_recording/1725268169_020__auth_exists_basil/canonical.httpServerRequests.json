@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /auth/exists/{username}",
+    "parameters": "()",
+    "status": 200
+  }
+]

@@ -22,7 +22,7 @@ import java.io.InputStream;
 public class AwsService {
 
     private final AmazonS3 s3Client;
-    BasicAWSCredentials credentials = new BasicAWSCredentials("d", "d//d/d");
+    BasicAWSCredentials credentials = new BasicAWSCredentials("", "");
 
     public AwsService() {
         this.s3Client = AmazonS3Client.builder()
@@ -40,8 +40,8 @@ public class AwsService {
 
         // Use a ByteArrayInputStream instead of the original InputStream
         try (InputStream byteArrayInputStream = new ByteArrayInputStream(contentBytes)) {
-            s3Client.putObject(new PutObjectRequest("d", fileName, byteArrayInputStream, metadata));
-            return s3Client.getUrl("d", fileName).toString();
+            s3Client.putObject(new PutObjectRequest("", fileName, byteArrayInputStream, metadata));
+            return s3Client.getUrl("", fileName).toString();
         } catch (AmazonServiceException ase) {
             System.out.println("Error Message: " + ase.getMessage());
             System.out.println("HTTP Status Code: " + ase.getStatusCode());

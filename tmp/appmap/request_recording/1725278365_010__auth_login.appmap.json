@@ -1,0 +1,432 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "content-length": "39",
+          "referer": "http://localhost:3000/",
+          "sec-fetch-site": "same-site",
+          "accept-language": "en-US,en;q=0.9",
+          "x-forwarded-proto": "http",
+          "origin": "http://localhost:3000",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:62044\"",
+          "accept": "application/json, text/plain, */*",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"",
+          "sec-ch-ua-mobile": "?1",
+          "x-forwarded-host": "localhost:8081",
+          "sec-ch-ua-platform": "\"Android\"",
+          "host": "172.19.40.255:9899",
+          "content-type": "application/json",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Mobile Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/auth/login",
+        "path_info": "/auth/login",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.controller.AuthController",
+      "event": "call",
+      "id": 2,
+      "lineno": 34,
+      "method_id": "getToken",
+      "parameters": [
+        {
+          "class": "com.abhijith.auth_service.dto.AuthRequest",
+          "kind": "req",
+          "name": "authRequest",
+          "object_id": 1912508207,
+          "value": "AuthRequest(username=basil, password=basil)"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.controller.AuthController",
+        "object_id": 837354325,
+        "value": "com.abhijith.auth_service.controller.AuthController@31e90355"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.config.CustomUserDetailsService",
+      "event": "call",
+      "id": 3,
+      "lineno": 21,
+      "method_id": "loadUserByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1262073048,
+          "value": "basil"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/config/CustomUserDetailsService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.config.CustomUserDetailsService",
+        "object_id": 1369313547,
+        "value": "com.abhijith.auth_service.config.CustomUserDetailsService@519e110b"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.repository.UserCredentialRepository",
+      "event": "call",
+      "id": 4,
+      "lineno": -1,
+      "method_id": "findByUsername",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1262073048,
+          "value": "basil"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/repository/UserCredentialRepository.java",
+      "receiver": {
+        "class": "jdk.proxy2.$Proxy190",
+        "object_id": 536676464,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@78b29a17"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "event": "call",
+      "id": 5,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select uc1_0.id,uc1_0.email,uc1_0.password,uc1_0.role,uc1_0.username from user_credential uc1_0 where uc1_0.username=?"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 6,
+      "parent_id": 5,
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.0013995,
+      "event": "return",
+      "id": 7,
+      "parent_id": 4,
+      "return_value": {
+        "class": "java.util.Optional",
+        "object_id": 1895259649,
+        "value": "Optional[UserCredential(id=U_00002, username=basil, email=basil@basil.com, password=$2a$10$RXPMkdsgoPl3QG0MYLc63.uTpDdvqutSE7bvtZtKhgjILaAGOyoKu, role=ATHLETE)]"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.00159983,
+      "event": "return",
+      "id": 8,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.auth_service.config.CustomUserDetails",
+        "object_id": 1559488040,
+        "value": "com.abhijith.auth_service.config.CustomUserDetails@5cf3e628"
+      },
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.AuthService",
+      "event": "call",
+      "id": 9,
+      "lineno": 35,
+      "method_id": "generateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "username",
+          "object_id": 1262073048,
+          "value": "basil"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 1784960176,
+          "value": "U_00002"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "role",
+          "object_id": 379152537,
+          "value": "ATHLETE"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.AuthService",
+        "object_id": 1948489841,
+        "value": "com.abhijith.auth_service.service.AuthService@74239871"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.JwtService",
+      "event": "call",
+      "id": 10,
+      "lineno": 28,
+      "method_id": "generateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userName",
+          "object_id": 1262073048,
+          "value": "basil"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 1784960176,
+          "value": "U_00002"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "role",
+          "object_id": 379152537,
+          "value": "ATHLETE"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.JwtService",
+        "object_id": 1046431119,
+        "value": "com.abhijith.auth_service.service.JwtService@3e5f458f"
+      },
+      "static": false,
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.00069991,
+      "event": "return",
+      "id": 11,
+      "parent_id": 10,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1474138919,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3ODM2NSwiZXhwIjoxNzI1MjgwMTY1fQ.iyzdZagV6TaR4nZwTN3IbRoaUjXCKQts5iiBQD4knzs"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.00090011,
+      "event": "return",
+      "id": 12,
+      "parent_id": 9,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1474138919,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3ODM2NSwiZXhwIjoxNzI1MjgwMTY1fQ.iyzdZagV6TaR4nZwTN3IbRoaUjXCKQts5iiBQD4knzs"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.01795549,
+      "event": "return",
+      "id": 13,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1474138919,
+        "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJiYXNpbCIsImlhdCI6MTcyNTI3ODM2NSwiZXhwIjoxNzI1MjgwMTY1fQ.iyzdZagV6TaR4nZwTN3IbRoaUjXCKQts5iiBQD4knzs"
+      },
+      "thread_id": 51
+    },
+    {
+      "elapsed": 0.01925806,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "Access-Control-Allow-Origin": "http://localhost:3000",
+          "X-Content-Type-Options": "nosniff",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Content-Length": "179",
+          "Date": "Mon, 02 Sep 2024 11:59:25 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 14,
+      "parent_id": 1,
+      "thread_id": 51
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /auth/login (200) - 17:29:25.010",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "9dc7814e59f21ab032901a592fa59db006b73508"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "getToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java:34"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "generateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/JwtService.java:28"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "generateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:35"
+                        }
+                      ],
+                      "name": "AuthService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "loadUserByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/config/CustomUserDetailsService.java:21"
+                        }
+                      ],
+                      "name": "CustomUserDetailsService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "config",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findByUsername",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/repository/UserCredentialRepository.java:-1"
+                        }
+                      ],
+                      "name": "UserCredentialRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repository",
+                  "type": "package"
+                }
+              ],
+              "name": "auth_service",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /auth/login"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select uc1_0.id,uc1_0.email,uc1_0.password,uc1_0.role,uc1_0.username from user_credential uc1_0 where uc1_0.username=?"
+        }
+      ]
+    }
+  ]
+}
