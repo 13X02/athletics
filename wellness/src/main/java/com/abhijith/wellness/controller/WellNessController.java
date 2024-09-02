@@ -64,6 +64,9 @@ public class WellNessController {
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)){
+                String athleteId = feignClientService.findAthleteIdByUserId(userInfo.getUserId());
+                dailyDiet.setAthleteId(athleteId);
+
                 return new ResponseEntity<>(dietService.createOrUpdateDailyDiet(dailyDiet), HttpStatus.OK);
 
             }

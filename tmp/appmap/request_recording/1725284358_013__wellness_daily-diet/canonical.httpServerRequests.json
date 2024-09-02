@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /wellness/daily-diet",
+    "parameters": "()",
+    "status": 200
+  }
+]

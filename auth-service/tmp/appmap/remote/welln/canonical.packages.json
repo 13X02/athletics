@@ -1,0 +1,7 @@
+[
+  "com/abhijith/wellness/controller",
+  "com/abhijith/wellness/feign",
+  "com/abhijith/wellness/model",
+  "com/abhijith/wellness/service",
+  "com/abhijith/wellness/util"
+]
