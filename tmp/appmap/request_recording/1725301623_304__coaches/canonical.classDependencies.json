@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "GET /coaches",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "GET /coaches",
+    "callee": "select a1_0.coach_coach_id,a1_1.achievment_id,a1_1.event,a1_1.meet_name,a1_1.performance,a1_1.score from coach_achievements a1_0 join achievments a1_1 on a1_1.achievment_id=a1_0.achievements_achievment_id where a1_0.coach_coach_id=?"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id from coach c1_0"
+  }
+]

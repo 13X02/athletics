@@ -32,5 +32,5 @@ public class Achievments {
     private String meetName;
     private String event;
     private String score;
-    private String perfomance;
+    private String performance;
 }

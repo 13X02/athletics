@@ -1,0 +1,10 @@
+[
+  {
+    "caller": "GET /athletes/{id}",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select a1_0.athlete_id,a1_0.birth_date,a1_0.category,c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id,a1_0.create_date,a1_0.first_name,a1_0.gender,a1_0.height,a1_0.last_name,a1_0.photo_url,a1_0.user_id,a1_0.weight from athlete a1_0 left join coach c1_0 on c1_0.coach_id=a1_0.coach_coach_id where a1_0.athlete_id=?"
+  }
+]

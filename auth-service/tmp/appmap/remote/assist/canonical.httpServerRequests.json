@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /athletes/request-assistance",
+    "parameters": "(coachId,message)",
+    "status": 400
+  }
+]

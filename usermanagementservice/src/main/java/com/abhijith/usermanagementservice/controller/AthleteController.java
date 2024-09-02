@@ -42,14 +42,23 @@ public class AthleteController {
             @RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader,
             @RequestParam("firstName") String firstName,
             @RequestParam("lastName") String lastName,
-            @RequestParam("birthDate") @DateTimeFormat(pattern = "yyyy-MM-dd") Date birthDate,
+            @RequestParam("birthDate")  String birthDateParam,
             @RequestParam("gender") String gender,
             @RequestParam("height") String height,
             @RequestParam("weight") String weight,
             @RequestParam("category") String category,
             @RequestParam("coachId") String coachId,
             @RequestParam("photo") MultipartFile photo) throws IOException {
-
+        Date birthDate = null;
+        if (birthDateParam != null && !birthDateParam.isEmpty()) {
+            try {
+                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+                java.util.Date parsedDate = format.parse(birthDateParam);
+                birthDate = new Date(parsedDate.getTime());
+            } catch (ParseException e) {
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
+        }
         AthleteRequestDto athleteRequestDto = new AthleteRequestDto(
                 firstName, lastName, birthDate, gender, height, weight, category, coachId
         );
@@ -117,7 +126,7 @@ public class AthleteController {
     }
 
     @PostMapping("/request-assistance")
-    public ResponseEntity<AssistanceRequest> requestAssistance(
+    public ResponseEntity<?> requestAssistance(
             @RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader,
             @RequestParam("coachId") String coachId,
             @RequestParam("message") String message) {
@@ -127,12 +136,10 @@ public class AthleteController {
         if (feignClientService.validateId(userInfo.getUserId())) {
             if (userInfo.getUserRole().equals(UserRole.ATHLETE)) {
                 AssistanceRequestDto assistanceRequestDto = new AssistanceRequestDto(coachId, message);
-                AssistanceRequest assistanceRequest = athleteService.requestAssistance(assistanceRequestDto, userInfo.getUserId());
-                if (assistanceRequest != null) {
+
+                    AssistanceRequest assistanceRequest = athleteService.requestAssistance(assistanceRequestDto, userInfo.getUserId());
                     return new ResponseEntity<>(assistanceRequest, HttpStatus.CREATED);
-                } else {
-                    return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-                }
+
             } else {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             }

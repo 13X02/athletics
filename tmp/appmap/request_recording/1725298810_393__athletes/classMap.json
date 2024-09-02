@@ -1,0 +1,22 @@
+[
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /athletes"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select a1_0.athlete_id,a1_0.birth_date,a1_0.category,a1_0.coach_coach_id,a1_0.create_date,a1_0.first_name,a1_0.gender,a1_0.height,a1_0.last_name,a1_0.photo_url,a1_0.user_id,a1_0.weight from athlete a1_0"
+      }
+    ]
+  }
+]

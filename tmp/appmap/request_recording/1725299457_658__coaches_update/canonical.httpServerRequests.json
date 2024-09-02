@@ -1,0 +1,7 @@
+[
+  {
+    "route": "PUT /coaches/update",
+    "parameters": "(firstName,lastName,gender,birthDate,category)",
+    "status": 200
+  }
+]

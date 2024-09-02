@@ -1,0 +1,76 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "validateAthleteId",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java:170"
+                      }
+                    ],
+                    "name": "AthleteController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "validateAthlete",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java:133"
+                      }
+                    ],
+                    "name": "AthleteService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              }
+            ],
+            "name": "usermanagementservice",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /athletes/validate/{id}"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select count(*) from athlete a1_0 where a1_0.athlete_id=?"
+      }
+    ]
+  }
+]

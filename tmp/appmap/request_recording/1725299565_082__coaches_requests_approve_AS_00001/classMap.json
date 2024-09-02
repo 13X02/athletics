@@ -1,0 +1,170 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "validateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:22"
+                      },
+                      {
+                        "name": "getUserIdFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:48"
+                      },
+                      {
+                        "name": "getRoleFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:52"
+                      }
+                    ],
+                    "name": "JwtUtil",
+                    "type": "class"
+                  }
+                ],
+                "name": "util",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "approveRequest",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/CoachService.java:127"
+                      }
+                    ],
+                    "name": "CoachService",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "extractUserInfo",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/JwtService.java:17"
+                      }
+                    ],
+                    "name": "JwtService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "validateId",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/feign/FeignClientService.java:-1"
+                      }
+                    ],
+                    "name": "FeignClientService",
+                    "type": "class"
+                  }
+                ],
+                "name": "feign",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "valueOf",
+                        "type": "function",
+                        "static": true,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java:3"
+                      }
+                    ],
+                    "name": "UserRole",
+                    "type": "class"
+                  }
+                ],
+                "name": "client",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "approveRequest",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/CoachController.java:165"
+                      }
+                    ],
+                    "name": "CoachController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              }
+            ],
+            "name": "usermanagementservice",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /coaches/requests/approve/{reqId}"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select ar1_0.assistance_request_id,a1_0.athlete_id,a1_0.birth_date,a1_0.category,c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id,a1_0.create_date,a1_0.first_name,a1_0.gender,a1_0.height,a1_0.last_name,a1_0.photo_url,a1_0.user_id,a1_0.weight,c2_0.coach_id,c2_0.birth_date,c2_0.category,c2_0.create_date,c2_0.first_name,c2_0.gender,c2_0.last_name,c2_0.photo_url,c2_0.user_id,ar1_0.remarks,ar1_0.status from assistance_request ar1_0 left join athlete a1_0 on a1_0.athlete_id=ar1_0.athlete_athlete_id left join coach c1_0 on c1_0.coach_id=a1_0.coach_coach_id left join coach c2_0 on c2_0.coach_id=ar1_0.coach_coach_id where ar1_0.assistance_request_id=?"
+      },
+      {
+        "type": "query",
+        "name": "update assistance_request set athlete_athlete_id=?,coach_coach_id=?,remarks=?,status=? where assistance_request_id=?"
+      },
+      {
+        "type": "query",
+        "name": "select a1_0.coach_coach_id,a1_1.athlete_id,a1_1.birth_date,a1_1.category,c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id,a1_1.create_date,a1_1.first_name,a1_1.gender,a1_1.height,a1_1.last_name,a1_1.photo_url,a1_1.user_id,a1_1.weight from coach_athletes a1_0 join athlete a1_1 on a1_1.athlete_id=a1_0.athletes_athlete_id left join coach c1_0 on c1_0.coach_id=a1_1.coach_coach_id where a1_0.coach_coach_id=?"
+      },
+      {
+        "type": "query",
+        "name": "update athlete set birth_date=?,category=?,coach_coach_id=?,create_date=?,first_name=?,gender=?,height=?,last_name=?,photo_url=?,user_id=?,weight=? where athlete_id=?"
+      },
+      {
+        "type": "query",
+        "name": "insert into coach_athletes (coach_coach_id,athletes_athlete_id) values (?,?)"
+      }
+    ]
+  }
+]

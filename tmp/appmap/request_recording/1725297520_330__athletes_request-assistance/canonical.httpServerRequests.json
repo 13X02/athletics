@@ -1,0 +1,12 @@
+[
+  {
+    "route": "POST /athletes/request-assistance",
+    "parameters": "()",
+    "status": null
+  },
+  {
+    "route": "POST /error",
+    "parameters": "(coachId,message)",
+    "status": 500
+  }
+]

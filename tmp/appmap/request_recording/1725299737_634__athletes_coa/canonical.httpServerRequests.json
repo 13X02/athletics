@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /athletes/{id}",
+    "parameters": "()",
+    "status": 404
+  }
+]

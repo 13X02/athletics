@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service
@@ -148,5 +149,11 @@ public class CoachService {
         assistanceRequestRepository.save(request);
 
         return "Request declined successfully";
+    }
+
+    public Coach findByUserId(String userId) {
+        Optional<Coach> coach = coachRepository.findByUserId(userId);
+        return coach.orElseThrow(() -> new IllegalArgumentException("Coach not found with user ID: " + userId));
+
     }
 }

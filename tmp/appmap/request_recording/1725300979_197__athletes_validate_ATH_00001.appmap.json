@@ -1,0 +1,229 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "0",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "localhost:8081",
+          "host": "localhost:8900",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "127.0.0.1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"127.0.0.1:51243\"",
+          "accept": "*/*",
+          "user-agent": "Java/21.0.4"
+        },
+        "normalized_path_info": "/athletes/validate/{id}",
+        "path_info": "/athletes/validate/ATH_00001",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "thread_id": 118
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.controller.AthleteController",
+      "event": "call",
+      "id": 2,
+      "lineno": 170,
+      "method_id": "validateAthleteId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "id",
+          "object_id": 440855177,
+          "value": "ATH_00001"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.controller.AthleteController",
+        "object_id": 456113410,
+        "value": "com.abhijith.usermanagementservice.controller.AthleteController@1b2fbd02"
+      },
+      "static": false,
+      "thread_id": 118
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.service.AthleteService",
+      "event": "call",
+      "id": 3,
+      "lineno": 133,
+      "method_id": "validateAthlete",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "id",
+          "object_id": 440855177,
+          "value": "ATH_00001"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.service.AthleteService",
+        "object_id": 920563233,
+        "value": "com.abhijith.usermanagementservice.service.AthleteService@36deae21"
+      },
+      "static": false,
+      "thread_id": 118
+    },
+    {
+      "event": "call",
+      "id": 4,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select count(*) from athlete a1_0 where a1_0.athlete_id=?"
+      },
+      "thread_id": 118
+    },
+    {
+      "elapsed": 0.0000074,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 118
+    },
+    {
+      "elapsed": 0.0005479,
+      "event": "return",
+      "id": 6,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 95245019,
+        "value": "true"
+      },
+      "thread_id": 118
+    },
+    {
+      "elapsed": 0.000559,
+      "event": "return",
+      "id": 7,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 95245019,
+        "value": "true"
+      },
+      "thread_id": 118
+    },
+    {
+      "elapsed": 0.0007232,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "Transfer-Encoding": "chunked",
+          "Date": "Mon, 02 Sep 2024 18:16:19 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 8,
+      "parent_id": 1,
+      "thread_id": 118
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /athletes/validate/ATH_00001 (200) - 23:46:19.197",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "b749ccfbcc9409acf72a754185e8a36c14c8c6c6"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateAthleteId",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java:170"
+                        }
+                      ],
+                      "name": "AthleteController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateAthlete",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java:133"
+                        }
+                      ],
+                      "name": "AthleteService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                }
+              ],
+              "name": "usermanagementservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /athletes/validate/{id}"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select count(*) from athlete a1_0 where a1_0.athlete_id=?"
+        }
+      ]
+    }
+  ]
+}

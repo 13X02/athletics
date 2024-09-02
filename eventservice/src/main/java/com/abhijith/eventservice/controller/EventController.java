@@ -106,12 +106,17 @@ public class EventController {
     }
 
     // Registration Endpoints
-    @PostMapping("/register")
-    public ResponseEntity<Registration> saveRegistration(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHead,@RequestBody RegistrationRequestDto registrationRequestDto) {
+    @PostMapping("/register/{eventId}")
+    public ResponseEntity<Registration> saveRegistration(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHead,@PathVariable("eventId")String eventId) {
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
 
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getRole().equals(UserRole.ATHLETE)){
+
+                String athleteId = feignClientService.findAthleteIdByUserId(userInfo.getUserId());
+
+                RegistrationRequestDto registrationRequestDto = new RegistrationRequestDto(eventId,athleteId);
+
                 return new ResponseEntity<>(registrationService.save(registrationRequestDto), HttpStatus.CREATED);
             }else {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);

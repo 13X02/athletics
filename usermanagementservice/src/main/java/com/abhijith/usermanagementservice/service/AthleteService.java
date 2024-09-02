@@ -3,6 +3,7 @@ package com.abhijith.usermanagementservice.service;
 import com.abhijith.usermanagementservice.dto.AssistanceRequestDto;
 import com.abhijith.usermanagementservice.dto.AthleteRequestDto;
 import com.abhijith.usermanagementservice.exception.AthleteNotFoundException;
+import com.abhijith.usermanagementservice.exception.DuplicateRequestException;
 import com.abhijith.usermanagementservice.model.AssistanceRequest;
 import com.abhijith.usermanagementservice.model.Athlete;
 import com.abhijith.usermanagementservice.model.Coach;
@@ -108,20 +109,23 @@ public class AthleteService {
     }
 
 
-    public AssistanceRequest requestAssistance(AssistanceRequestDto assistanceRequestDto,String userId){
-
+    public AssistanceRequest requestAssistance(AssistanceRequestDto assistanceRequestDto, String userId) {
         Optional<Athlete> athlete = athleteRepository.findByUserId(userId);
-        if(athlete.isPresent()){
+        if (athlete.isPresent()) {
             Optional<Coach> coach = coachRepository.findById(assistanceRequestDto.getCoachId());
-            if (coach.isPresent()){
-                AssistanceRequest assistanceRequest = AppUtil.toAssistanceRequest(assistanceRequestDto,coach.get(),athlete.get());
+            if (coach.isPresent()) {
+                // Check if an assistance request already exists for this athlete and coach
+                boolean existingRequest = assitanceReqestRepository.existsByAthleteAndCoach(athlete.get(), coach.get());
+                if (existingRequest) {
+                    throw new DuplicateRequestException("You have already requested assistance from this coach.");
+                }
+                AssistanceRequest assistanceRequest = AppUtil.toAssistanceRequest(assistanceRequestDto, coach.get(), athlete.get());
                 return assitanceReqestRepository.save(assistanceRequest);
             }
-            return null;
         }
         return null;
-
     }
+
 
 
     public Boolean validateAthlete(String id) {

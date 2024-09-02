@@ -1,0 +1,14 @@
+[
+  {
+    "caller": "GET /coaches/requests",
+    "callee": "com/abhijith"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select ar1_0.assistance_request_id,ar1_0.athlete_athlete_id,ar1_0.coach_coach_id,ar1_0.remarks,ar1_0.status from assistance_request ar1_0 where ar1_0.coach_coach_id=? and ar1_0.status=?"
+  },
+  {
+    "caller": "com/abhijith",
+    "callee": "select c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id from coach c1_0 where c1_0.user_id=?"
+  }
+]

@@ -1,0 +1,8 @@
+[
+  "com/abhijith/usermanagementservice/client/UserRole",
+  "com/abhijith/usermanagementservice/controller/CoachController",
+  "com/abhijith/usermanagementservice/feign/FeignClientService",
+  "com/abhijith/usermanagementservice/service/CoachService",
+  "com/abhijith/usermanagementservice/service/JwtService",
+  "com/abhijith/usermanagementservice/util/JwtUtil"
+]

@@ -1,0 +1,7 @@
+[
+  {
+    "route": "POST /coaches/requests/approve/{reqId}",
+    "parameters": "()",
+    "status": 200
+  }
+]

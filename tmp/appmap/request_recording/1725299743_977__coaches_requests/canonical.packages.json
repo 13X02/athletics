@@ -1,0 +1,8 @@
+[
+  "com/abhijith/usermanagementservice/client",
+  "com/abhijith/usermanagementservice/controller",
+  "com/abhijith/usermanagementservice/feign",
+  "com/abhijith/usermanagementservice/repository",
+  "com/abhijith/usermanagementservice/service",
+  "com/abhijith/usermanagementservice/util"
+]

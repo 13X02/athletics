@@ -1,0 +1,740 @@
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "sec-fetch-mode": "cors",
+          "content-length": "242",
+          "referer": "http://localhost:3000/",
+          "sec-fetch-site": "same-site",
+          "accept-language": "en-GB,en",
+          "x-forwarded-proto": "http",
+          "origin": "http://localhost:3000",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "0:0:0:0:0:0:0:1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"[0:0:0:0:0:0:0:1]:53390\"",
+          "accept": "application/json, text/plain, */*",
+          "authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0",
+          "sec-gpc": "1",
+          "sec-ch-ua": "\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Brave\";v=\"128\"",
+          "sec-ch-ua-mobile": "?0",
+          "x-forwarded-host": "localhost:8081",
+          "sec-ch-ua-platform": "\"macOS\"",
+          "host": "localhost:8900",
+          "content-type": "multipart/form-data; boundary=----WebKitFormBoundarys6TvuXzAqhjVmCaO",
+          "accept-encoding": "gzip, deflate, br, zstd",
+          "user-agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36",
+          "sec-fetch-dest": "empty"
+        },
+        "normalized_path_info": "/athletes/request-assistance",
+        "path_info": "/athletes/request-assistance",
+        "protocol": "HTTP/1.1",
+        "request_method": "POST"
+      },
+      "id": 1,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "coachId",
+          "object_id": 1760271456,
+          "value": "CO_00001"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1595946087,
+          "value": "hi"
+        }
+      ],
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.controller.AthleteController",
+      "event": "call",
+      "id": 2,
+      "lineno": 134,
+      "method_id": "requestAssistance",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 2118401141,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "coachId",
+          "object_id": 1760271456,
+          "value": "CO_00001"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "message",
+          "object_id": 1595946087,
+          "value": "hi"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.controller.AthleteController",
+        "object_id": 1369398020,
+        "value": "com.abhijith.usermanagementservice.controller.AthleteController@519f5b04"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.service.JwtService",
+      "event": "call",
+      "id": 3,
+      "lineno": 17,
+      "method_id": "extractUserInfo",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "authHeader",
+          "object_id": 2118401141,
+          "value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/JwtService.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.service.JwtService",
+        "object_id": 522600218,
+        "value": "com.abhijith.usermanagementservice.service.JwtService@1f263f1a"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.util.JwtUtil",
+      "event": "call",
+      "id": 4,
+      "lineno": 22,
+      "method_id": "validateToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 1569321227,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.util.JwtUtil",
+        "object_id": 316584870,
+        "value": "com.abhijith.usermanagementservice.util.JwtUtil@12deb3a6"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0027756,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.util.JwtUtil",
+      "event": "call",
+      "id": 6,
+      "lineno": 48,
+      "method_id": "getUserIdFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 1569321227,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.util.JwtUtil",
+        "object_id": 316584870,
+        "value": "com.abhijith.usermanagementservice.util.JwtUtil@12deb3a6"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0001454,
+      "event": "return",
+      "id": 7,
+      "parent_id": 6,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 1448937176,
+        "value": "U_00002"
+      },
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.util.JwtUtil",
+      "event": "call",
+      "id": 8,
+      "lineno": 52,
+      "method_id": "getRoleFromToken",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "token",
+          "object_id": 1569321227,
+          "value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiQVRITEVURSIsInVzZXJJZCI6IlVfMDAwMDIiLCJzdWIiOiJhdGhsZXRlIiwiaWF0IjoxNzI1Mjk3MDQ4LCJleHAiOjE3MjUyOTg4NDh9.QAjPA2guulLmbb_wG6IVwTqQg8o3zvWi64K-AeZhDd0"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.util.JwtUtil",
+        "object_id": 316584870,
+        "value": "com.abhijith.usermanagementservice.util.JwtUtil@12deb3a6"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0000765,
+      "event": "return",
+      "id": 9,
+      "parent_id": 8,
+      "return_value": {
+        "class": "java.lang.String",
+        "object_id": 704374403,
+        "value": "ATHLETE"
+      },
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.client.UserRole",
+      "event": "call",
+      "id": 10,
+      "lineno": 3,
+      "method_id": "valueOf",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "name",
+          "object_id": 704374403,
+          "value": "ATHLETE"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java",
+      "static": true,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.client.UserRole",
+      "event": "call",
+      "id": 11,
+      "lineno": 3,
+      "method_id": "values",
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java",
+      "static": true,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0000159,
+      "event": "return",
+      "id": 12,
+      "parent_id": 11,
+      "return_value": {
+        "class": "[Lcom.abhijith.usermanagementservice.client.UserRole;",
+        "object_id": 52385956,
+        "value": "[Lcom.abhijith.usermanagementservice.client.UserRole;@31f58a4"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.000047,
+      "event": "return",
+      "id": 13,
+      "parent_id": 10,
+      "return_value": {
+        "class": "com.abhijith.usermanagementservice.client.UserRole",
+        "object_id": 1602778007,
+        "value": "ATHLETE"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0040947,
+      "event": "return",
+      "id": 14,
+      "parent_id": 3,
+      "return_value": {
+        "class": "com.abhijith.usermanagementservice.dto.UserInfo",
+        "object_id": 430926527,
+        "value": "UserInfo(userId=U_00002, userRole=ATHLETE)"
+      },
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.feign.FeignClientService",
+      "event": "call",
+      "id": 15,
+      "lineno": -1,
+      "method_id": "validateId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1448937176,
+          "value": "U_00002"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/feign/FeignClientService.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy226",
+        "object_id": 1182270150,
+        "value": "HardCodedTarget(type=FeignClientService, name=auth-service, url=http://localhost:8081)"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0118609,
+      "event": "return",
+      "id": 16,
+      "parent_id": 15,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1719738010,
+        "value": "true"
+      },
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.service.AthleteService",
+      "event": "call",
+      "id": 17,
+      "lineno": 113,
+      "method_id": "requestAssistance",
+      "parameters": [
+        {
+          "class": "com.abhijith.usermanagementservice.dto.AssistanceRequestDto",
+          "kind": "req",
+          "name": "assistanceRequestDto",
+          "object_id": 1399223179,
+          "value": "AssistanceRequestDto(coachId=CO_00001, remarks=hi)"
+        },
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "userId",
+          "object_id": 1448937176,
+          "value": "U_00002"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java",
+      "receiver": {
+        "class": "com.abhijith.usermanagementservice.service.AthleteService",
+        "object_id": 626635831,
+        "value": "com.abhijith.usermanagementservice.service.AthleteService@2559b437"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.repository.AthleteRepository",
+      "event": "call",
+      "id": 18,
+      "lineno": -1,
+      "method_id": "findByUserId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 1448937176,
+          "value": "U_00002"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AthleteRepository.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy208",
+        "object_id": 413310600,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@5af3f834"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "event": "call",
+      "id": 19,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select a1_0.athlete_id,a1_0.birth_date,a1_0.category,a1_0.coach_coach_id,a1_0.create_date,a1_0.first_name,a1_0.gender,a1_0.height,a1_0.last_name,a1_0.photo_url,a1_0.user_id,a1_0.weight from athlete a1_0 where a1_0.user_id=?"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0004805,
+      "event": "return",
+      "id": 20,
+      "parent_id": 19,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0161796,
+      "event": "return",
+      "id": 21,
+      "parent_id": 18,
+      "return_value": {
+        "class": "java.util.Optional",
+        "object_id": 823179619,
+        "value": "Optional[Athlete(athleteId=ATH_00001, userId=U_00002, firstName=Basil, lastName=George, birthDate=2024-09-04, gender=Male, height=170, weight=60, category=Basketball, coach=null, photoUrl=https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/20240902_204615_2384e70c-31ed-49ed-a976-cd3022ee0e14_file.jpg, createDate=2024-09-02)]"
+      },
+      "thread_id": 60
+    },
+    {
+      "event": "call",
+      "id": 22,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id from coach c1_0 where c1_0.coach_id=?"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0001396,
+      "event": "return",
+      "id": 23,
+      "parent_id": 22,
+      "thread_id": 60
+    },
+    {
+      "defined_class": "com.abhijith.usermanagementservice.repository.AssistanceRequestRepository",
+      "event": "call",
+      "id": 24,
+      "lineno": -1,
+      "method_id": "existsByAthleteAndCoach",
+      "parameters": [
+        {
+          "class": "com.abhijith.usermanagementservice.model.Athlete",
+          "kind": "req",
+          "name": "p0",
+          "object_id": 350673597,
+          "value": "Athlete(athleteId=ATH_00001, userId=U_00002, firstName=Basil, lastName=George, birthDate=2024-09-04, gender=Male, height=170, weight=60, category=Basketball, coach=null, photoUrl=https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/20240902_204615_2384e70c-31ed-49ed-a976-cd3022ee0e14_file.jpg, createDate=2024-09-02)"
+        },
+        {
+          "class": "com.abhijith.usermanagementservice.model.Coach",
+          "kind": "req",
+          "name": "p1",
+          "object_id": 1691384965,
+          "value": "Coach(coachId=CO_00001, userId=U_00003, firstName=Jasrin, lastName=Sen, birthDate=2024-09-04, gender=Male, category=Basketball, achievements=[Achievments(achievmentId=AC_00001, meetName=Olympics 2022, event=Swimming, score=100, performance=null), Achievments(achievmentId=AC_00002, meetName=Olympics 2023, event=Swimming, score=150, performance=null), Achievments(achievmentId=AC_00003, meetName=UST , event=Swimming, score=200, performance=null), Achievments(achievmentId=AC_00052, meetName=Olympics 2022, event=Swimming, score=150, performance=aaa)], athletes=[], photoUrl=https://basilintebucket2024ilundakkiyath.s3.ap-south-1.amazonaws.com/20240902_211005_ad580908-afcd-437c-ada5-e43ee9709a5a_5%20%281%29.jpeg, createDate=2024-09-02)"
+        }
+      ],
+      "path": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AssistanceRequestRepository.java",
+      "receiver": {
+        "class": "jdk.proxy3.$Proxy211",
+        "object_id": 357227121,
+        "value": "org.springframework.data.jpa.repository.support.SimpleJpaRepository@69027efe"
+      },
+      "static": false,
+      "thread_id": 60
+    },
+    {
+      "event": "call",
+      "id": 25,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select ar1_0.assistance_request_id from assistance_request ar1_0 where ar1_0.athlete_athlete_id=? and ar1_0.coach_coach_id=? limit ?"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0017704,
+      "event": "return",
+      "id": 26,
+      "parent_id": 25,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0026816,
+      "event": "return",
+      "id": 27,
+      "parent_id": 24,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1719738010,
+        "value": "true"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0222302,
+      "event": "return",
+      "exceptions": [
+        {
+          "class": "com.abhijith.usermanagementservice.exception.DuplicateRequestException",
+          "lineno": 120,
+          "message": "You have already requested assistance from this coach.",
+          "object_id": 452083935,
+          "path": "AthleteService.java"
+        }
+      ],
+      "id": 28,
+      "parent_id": 17,
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0430163,
+      "event": "return",
+      "id": 29,
+      "parent_id": 2,
+      "return_value": {
+        "class": "org.springframework.http.ResponseEntity",
+        "object_id": 401696779,
+        "value": "<400 BAD_REQUEST Bad Request,[]>"
+      },
+      "thread_id": 60
+    },
+    {
+      "elapsed": 0.0533613,
+      "event": "return",
+      "http_server_response": {
+        "headers": {},
+        "status": 400
+      },
+      "id": 30,
+      "parent_id": 1,
+      "thread_id": 60
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "POST /athletes/request-assistance (400) - 22:46:43.530",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "git@github.com:13X02/athletics.git",
+      "branch": "main",
+      "commit": "b749ccfbcc9409acf72a754185e8a36c14c8c6c6"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:22"
+                        },
+                        {
+                          "name": "getUserIdFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:48"
+                        },
+                        {
+                          "name": "getRoleFromToken",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java:52"
+                        }
+                      ],
+                      "name": "JwtUtil",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "util",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "findByUserId",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AthleteRepository.java:-1"
+                        }
+                      ],
+                      "name": "AthleteRepository",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "existsByAthleteAndCoach",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AssistanceRequestRepository.java:-1"
+                        }
+                      ],
+                      "name": "AssistanceRequestRepository",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "repository",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateId",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/feign/FeignClientService.java:-1"
+                        }
+                      ],
+                      "name": "FeignClientService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "feign",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "requestAssistance",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java:113"
+                        }
+                      ],
+                      "name": "AthleteService",
+                      "type": "class"
+                    },
+                    {
+                      "children": [
+                        {
+                          "name": "extractUserInfo",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/JwtService.java:17"
+                        }
+                      ],
+                      "name": "JwtService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "values",
+                          "type": "function",
+                          "static": true,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java:3"
+                        },
+                        {
+                          "name": "valueOf",
+                          "type": "function",
+                          "static": true,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java:3"
+                        }
+                      ],
+                      "name": "UserRole",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "client",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "requestAssistance",
+                          "type": "function",
+                          "static": false,
+                          "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java:134"
+                        }
+                      ],
+                      "name": "AthleteController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                }
+              ],
+              "name": "usermanagementservice",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "POST /athletes/request-assistance"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select a1_0.athlete_id,a1_0.birth_date,a1_0.category,a1_0.coach_coach_id,a1_0.create_date,a1_0.first_name,a1_0.gender,a1_0.height,a1_0.last_name,a1_0.photo_url,a1_0.user_id,a1_0.weight from athlete a1_0 where a1_0.user_id=?"
+        },
+        {
+          "type": "query",
+          "name": "select c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id from coach c1_0 where c1_0.coach_id=?"
+        },
+        {
+          "type": "query",
+          "name": "select ar1_0.assistance_request_id from assistance_request ar1_0 where ar1_0.athlete_athlete_id=? and ar1_0.coach_coach_id=? limit ?"
+        }
+      ]
+    }
+  ]
+}

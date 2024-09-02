@@ -1,0 +1,10 @@
+[
+  "com/abhijith/usermanagementservice/client/UserRole",
+  "com/abhijith/usermanagementservice/controller/AthleteController",
+  "com/abhijith/usermanagementservice/feign/FeignClientService",
+  "com/abhijith/usermanagementservice/repository/AssistanceRequestRepository",
+  "com/abhijith/usermanagementservice/repository/AthleteRepository",
+  "com/abhijith/usermanagementservice/service/AthleteService",
+  "com/abhijith/usermanagementservice/service/JwtService",
+  "com/abhijith/usermanagementservice/util/JwtUtil"
+]

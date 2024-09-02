@@ -1,0 +1,174 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "createOrUpdateDailyDiet",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/service/DietService.java:63"
+                      }
+                    ],
+                    "name": "DietService",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "extractUserInfo",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java:17"
+                      }
+                    ],
+                    "name": "JwtService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "validateAthleteId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                      },
+                      {
+                        "name": "findAthleteIdByUserId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                      },
+                      {
+                        "name": "validateId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                      }
+                    ],
+                    "name": "FeignClientService",
+                    "type": "class"
+                  }
+                ],
+                "name": "feign",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "getUserIdFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:47"
+                      },
+                      {
+                        "name": "validateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:21"
+                      },
+                      {
+                        "name": "getRoleFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:51"
+                      }
+                    ],
+                    "name": "JwtUtil",
+                    "type": "class"
+                  }
+                ],
+                "name": "util",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "valueOf",
+                        "type": "function",
+                        "static": true,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java:3"
+                      }
+                    ],
+                    "name": "UserRole",
+                    "type": "class"
+                  }
+                ],
+                "name": "model",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "createOrUpdateDailyDiet",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:64"
+                      }
+                    ],
+                    "name": "WellNessController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              }
+            ],
+            "name": "wellness",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "POST /wellness/daily-diet"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select next_val as id_val from daily_diet_seq for update"
+      },
+      {
+        "type": "query",
+        "name": "update daily_diet_seq set next_val= ? where next_val=?"
+      },
+      {
+        "type": "query",
+        "name": "insert into daily_diet (athlete_id,calories,current_weight,date,weight_plan_id,id) values (?,?,?,?,?,?)"
+      }
+    ]
+  }
+]

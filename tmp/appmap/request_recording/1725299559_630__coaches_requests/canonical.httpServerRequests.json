@@ -1,0 +1,7 @@
+[
+  {
+    "route": "GET /coaches/requests",
+    "parameters": "()",
+    "status": 200
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "GET /wellness/daily-diet (200) - 19:12:21.612",
+  "app": "athletics",
+  "language": {
+    "name": "java",
+    "version": "21.0.4+7-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "request_recording",
+    "type": "requests"
+  },
+  "recording": {},
+  "git": {
+    "repository": "https://github.com/13X02/athletics.git",
+    "branch": "main",
+    "commit": "5aa17899a20443a785b62a909ef7d491a496ceaf"
+  }
+}

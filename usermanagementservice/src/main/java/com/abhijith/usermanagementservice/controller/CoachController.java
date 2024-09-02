@@ -124,6 +124,20 @@ public class CoachController {
 
     }
 
+    @GetMapping("fetch")
+    public ResponseEntity<Coach> fetchCoach(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHeader){
+        UserInfo userInfo = jwtService.extractUserInfo(authHeader);
+        if(feignClientService.validateId(userInfo.getUserId())){
+            if (userInfo.getUserRole().equals(UserRole.COACH)){
+               return new ResponseEntity<>( coachService.findByUserId(userInfo.getUserId()),HttpStatus.OK);
+            }else {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+    }
+
     @GetMapping("/requests")
     public ResponseEntity<List<AssistanceRequest>> getAssistanceRequests(@RequestHeader(HttpHeaders.AUTHORIZATION) String authHeader) {
 

@@ -1,1 +1,245 @@
-{"events":[{"event":"call","http_server_request":{"headers":{"content-length":"0","x-forwarded-proto":"http","x-forwarded-host":"localhost:8081","host":"172.19.40.255:9899","x-forwarded-port":"8081","x-forwarded-for":"127.0.0.1","forwarded":"proto=http;host=\"localhost:8081\";for=\"127.0.0.1:52328\"","accept":"*/*","user-agent":"Java/21.0.4"},"path_info":"/auth/validateId","protocol":"HTTP/1.1","request_method":"GET"},"id":11336,"thread_id":47},{"defined_class":"com.abhijith.auth_service.controller.AuthController","event":"call","id":11343,"lineno":61,"method_id":"validateId","parameters":[{"class":"java.lang.String","kind":"req","name":"id","object_id":1819070041,"value":"U_00002"}],"path":"auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java","receiver":{"class":"com.abhijith.auth_service.controller.AuthController","object_id":1723224928,"value":"com.abhijith.auth_service.controller.AuthController@66b65360"},"static":false,"thread_id":47},{"defined_class":"com.abhijith.auth_service.service.AuthService","event":"call","id":11344,"lineno":44,"method_id":"validateId","parameters":[{"class":"java.lang.String","kind":"req","name":"id","object_id":1819070041,"value":"U_00002"}],"path":"auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java","receiver":{"class":"com.abhijith.auth_service.service.AuthService","object_id":1056080234,"value":"com.abhijith.auth_service.service.AuthService@3ef2816a"},"static":false,"thread_id":47},{"event":"call","id":11368,"sql_query":{"database_type":"MySQL","sql":"select count(*) from user_credential uc1_0 where uc1_0.id=?"},"thread_id":47},{"elapsed":0.0,"event":"return","id":11369,"parent_id":11368,"thread_id":47},{"elapsed":0.00170088,"event":"return","id":11375,"parent_id":11344,"return_value":{"class":"java.lang.Boolean","object_id":1177908204,"value":"true"},"thread_id":47},{"elapsed":0.00170088,"event":"return","id":11376,"parent_id":11343,"return_value":{"class":"java.lang.Boolean","object_id":1177908204,"value":"true"},"thread_id":47},{"elapsed":0.00189922,"event":"return","http_server_response":{"headers":{"X-Frame-Options":"DENY","Transfer-Encoding":"chunked","Cache-Control":"no-cache, no-store, max-age=0, must-revalidate","X-Content-Type-Options":"nosniff","Vary":"Origin","Pragma":"no-cache","Expires":"0","X-XSS-Protection":"0","Date":"Mon, 02 Sep 2024 13:43:10 GMT","Content-Type":"application/json"},"status":200},"id":11385,"parent_id":11336,"thread_id":47}],"classMap":[{"children":[{"children":[{"children":[{"children":[{"children":[{"labels":[],"location":"auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:44","name":"validateId","static":false,"type":"function"}],"location":"auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java","name":"AuthService","static":false,"type":"class"}],"name":"service","type":"package"},{"children":[{"children":[{"labels":[],"location":"auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java:61","name":"validateId","static":false,"type":"function"}],"location":"auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java","name":"AuthController","static":false,"type":"class"}],"name":"controller","type":"package"}],"name":"auth_service","type":"package"}],"name":"abhijith","type":"package"}],"name":"com","type":"package"}],"version":"1.2","metadata":{"name":"GET /auth/validateId (200) - 19:13:10.126","app":"athletics","language":{"name":"java","version":"21.0.4+7-LTS","engine":"OpenJDK 64-Bit Server VM"},"client":{"name":"appmap-java","url":"https://github.com/appland/appmap-java"},"recorder":{"name":"request_recording","type":"requests"},"recording":{},"git":{"repository":"https://github.com/13X02/athletics.git","branch":"main","commit":"5aa17899a20443a785b62a909ef7d491a496ceaf"}},"eventUpdates":{"11336":{"event":"call","http_server_request":{"headers":{"content-length":"0","x-forwarded-proto":"http","x-forwarded-host":"localhost:8081","host":"172.19.40.255:9899","x-forwarded-port":"8081","x-forwarded-for":"127.0.0.1","forwarded":"proto=http;host=\"localhost:8081\";for=\"127.0.0.1:52328\"","accept":"*/*","user-agent":"Java/21.0.4"},"normalized_path_info":"/auth/validateId","path_info":"/auth/validateId","protocol":"HTTP/1.1","request_method":"GET"},"id":11336,"message":[{"class":"java.lang.String","kind":"req","name":"id","object_id":1819070041,"value":"U_00002"}],"thread_id":47}}}
+{
+  "events": [
+    {
+      "event": "call",
+      "http_server_request": {
+        "headers": {
+          "content-length": "0",
+          "x-forwarded-proto": "http",
+          "x-forwarded-host": "localhost:8081",
+          "host": "172.19.40.255:9899",
+          "x-forwarded-port": "8081",
+          "x-forwarded-for": "127.0.0.1",
+          "forwarded": "proto=http;host=\"localhost:8081\";for=\"127.0.0.1:52328\"",
+          "accept": "*/*",
+          "user-agent": "Java/21.0.4"
+        },
+        "normalized_path_info": "/auth/validateId",
+        "path_info": "/auth/validateId",
+        "protocol": "HTTP/1.1",
+        "request_method": "GET"
+      },
+      "id": 1,
+      "message": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "id",
+          "object_id": 1819070041,
+          "value": "U_00002"
+        }
+      ],
+      "thread_id": 47
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.controller.AuthController",
+      "event": "call",
+      "id": 2,
+      "lineno": 61,
+      "method_id": "validateId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "id",
+          "object_id": 1819070041,
+          "value": "U_00002"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.controller.AuthController",
+        "object_id": 1723224928,
+        "value": "com.abhijith.auth_service.controller.AuthController@66b65360"
+      },
+      "static": false,
+      "thread_id": 47
+    },
+    {
+      "defined_class": "com.abhijith.auth_service.service.AuthService",
+      "event": "call",
+      "id": 3,
+      "lineno": 44,
+      "method_id": "validateId",
+      "parameters": [
+        {
+          "class": "java.lang.String",
+          "kind": "req",
+          "name": "id",
+          "object_id": 1819070041,
+          "value": "U_00002"
+        }
+      ],
+      "path": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java",
+      "receiver": {
+        "class": "com.abhijith.auth_service.service.AuthService",
+        "object_id": 1056080234,
+        "value": "com.abhijith.auth_service.service.AuthService@3ef2816a"
+      },
+      "static": false,
+      "thread_id": 47
+    },
+    {
+      "event": "call",
+      "id": 4,
+      "sql_query": {
+        "database_type": "MySQL",
+        "sql": "select count(*) from user_credential uc1_0 where uc1_0.id=?"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0,
+      "event": "return",
+      "id": 5,
+      "parent_id": 4,
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00170088,
+      "event": "return",
+      "id": 6,
+      "parent_id": 3,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1177908204,
+        "value": "true"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00170088,
+      "event": "return",
+      "id": 7,
+      "parent_id": 2,
+      "return_value": {
+        "class": "java.lang.Boolean",
+        "object_id": 1177908204,
+        "value": "true"
+      },
+      "thread_id": 47
+    },
+    {
+      "elapsed": 0.00189922,
+      "event": "return",
+      "http_server_response": {
+        "headers": {
+          "X-Frame-Options": "DENY",
+          "Transfer-Encoding": "chunked",
+          "Cache-Control": "no-cache, no-store, max-age=0, must-revalidate",
+          "X-Content-Type-Options": "nosniff",
+          "Vary": "Origin",
+          "Pragma": "no-cache",
+          "Expires": "0",
+          "X-XSS-Protection": "0",
+          "Date": "Mon, 02 Sep 2024 13:43:10 GMT",
+          "Content-Type": "application/json"
+        },
+        "status": 200
+      },
+      "id": 8,
+      "parent_id": 1,
+      "thread_id": 47
+    }
+  ],
+  "version": "1.2",
+  "metadata": {
+    "name": "GET /auth/validateId (200) - 19:13:10.126",
+    "app": "athletics",
+    "language": {
+      "name": "java",
+      "version": "21.0.4+7-LTS",
+      "engine": "OpenJDK 64-Bit Server VM"
+    },
+    "client": {
+      "name": "appmap-java",
+      "url": "https://github.com/appland/appmap-java"
+    },
+    "recorder": {
+      "name": "request_recording",
+      "type": "requests"
+    },
+    "recording": {},
+    "git": {
+      "repository": "https://github.com/13X02/athletics.git",
+      "branch": "main",
+      "commit": "5aa17899a20443a785b62a909ef7d491a496ceaf"
+    }
+  },
+  "classMap": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateId",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/service/AuthService.java:44"
+                        }
+                      ],
+                      "name": "AuthService",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "service",
+                  "type": "package"
+                },
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "name": "validateId",
+                          "type": "function",
+                          "static": false,
+                          "location": "auth-service/src/main/java/com/abhijith/auth_service/controller/AuthController.java:61"
+                        }
+                      ],
+                      "name": "AuthController",
+                      "type": "class"
+                    }
+                  ],
+                  "name": "controller",
+                  "type": "package"
+                }
+              ],
+              "name": "auth_service",
+              "type": "package"
+            }
+          ],
+          "name": "abhijith",
+          "type": "package"
+        }
+      ],
+      "name": "com",
+      "type": "package"
+    },
+    {
+      "type": "http",
+      "name": "HTTP server requests",
+      "children": [
+        {
+          "type": "route",
+          "name": "GET /auth/validateId"
+        }
+      ]
+    },
+    {
+      "type": "database",
+      "name": "Database",
+      "children": [
+        {
+          "type": "query",
+          "name": "select count(*) from user_credential uc1_0 where uc1_0.id=?"
+        }
+      ]
+    }
+  ]
+}

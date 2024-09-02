@@ -1,0 +1,23 @@
+{
+  "name": "GET /coaches/overview (200) - 22:50:37.219",
+  "app": "athletics",
+  "language": {
+    "name": "java",
+    "version": "21.0.4+7-LTS",
+    "engine": "OpenJDK 64-Bit Server VM"
+  },
+  "client": {
+    "name": "appmap-java",
+    "url": "https://github.com/appland/appmap-java"
+  },
+  "recorder": {
+    "name": "request_recording",
+    "type": "requests"
+  },
+  "recording": {},
+  "git": {
+    "repository": "git@github.com:13X02/athletics.git",
+    "branch": "main",
+    "commit": "b749ccfbcc9409acf72a754185e8a36c14c8c6c6"
+  }
+}

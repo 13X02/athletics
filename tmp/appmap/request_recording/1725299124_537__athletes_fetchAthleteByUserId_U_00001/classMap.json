@@ -1,0 +1,94 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "findAthleteByUserId",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java:145"
+                      }
+                    ],
+                    "name": "AthleteService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "existsByUserId",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AthleteRepository.java:-1"
+                      }
+                    ],
+                    "name": "AthleteRepository",
+                    "type": "class"
+                  }
+                ],
+                "name": "repository",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "findAthleteByUserId",
+                        "type": "function",
+                        "static": false,
+                        "location": "usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java:181"
+                      }
+                    ],
+                    "name": "AthleteController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              }
+            ],
+            "name": "usermanagementservice",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /athletes/fetchAthleteByUserId/{userId}"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select a1_0.athlete_id from athlete a1_0 where a1_0.user_id=? limit ?"
+      }
+    ]
+  }
+]

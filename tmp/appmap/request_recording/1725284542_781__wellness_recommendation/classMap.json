@@ -1,0 +1,178 @@
+[
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "children": [
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "getAIRecommendedDiet",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java:81"
+                      }
+                    ],
+                    "name": "WellNessController",
+                    "type": "class"
+                  }
+                ],
+                "name": "controller",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "getUserIdFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:47"
+                      },
+                      {
+                        "name": "validateToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:21"
+                      },
+                      {
+                        "name": "getRoleFromToken",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java:51"
+                      }
+                    ],
+                    "name": "JwtUtil",
+                    "type": "class"
+                  }
+                ],
+                "name": "util",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "findByAthleteId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/repo/WeightPlanRepository.java:-1"
+                      }
+                    ],
+                    "name": "WeightPlanRepository",
+                    "type": "class"
+                  }
+                ],
+                "name": "repo",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "extractUserInfo",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/service/JwtService.java:17"
+                      }
+                    ],
+                    "name": "JwtService",
+                    "type": "class"
+                  },
+                  {
+                    "children": [
+                      {
+                        "name": "getAIRecommendedDiet",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/service/DietService.java:71"
+                      }
+                    ],
+                    "name": "DietService",
+                    "type": "class"
+                  }
+                ],
+                "name": "service",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "valueOf",
+                        "type": "function",
+                        "static": true,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/model/UserRole.java:3"
+                      }
+                    ],
+                    "name": "UserRole",
+                    "type": "class"
+                  }
+                ],
+                "name": "model",
+                "type": "package"
+              },
+              {
+                "children": [
+                  {
+                    "children": [
+                      {
+                        "name": "findAthleteIdByUserId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                      },
+                      {
+                        "name": "validateId",
+                        "type": "function",
+                        "static": false,
+                        "location": "wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java:-1"
+                      }
+                    ],
+                    "name": "FeignClientService",
+                    "type": "class"
+                  }
+                ],
+                "name": "feign",
+                "type": "package"
+              }
+            ],
+            "name": "wellness",
+            "type": "package"
+          }
+        ],
+        "name": "abhijith",
+        "type": "package"
+      }
+    ],
+    "name": "com",
+    "type": "package"
+  },
+  {
+    "type": "http",
+    "name": "HTTP server requests",
+    "children": [
+      {
+        "type": "route",
+        "name": "GET /wellness/recommendation"
+      }
+    ]
+  },
+  {
+    "type": "database",
+    "name": "Database",
+    "children": [
+      {
+        "type": "query",
+        "name": "select wp1_0.id,wp1_0.athlete_id,wp1_0.daily_calorie_goal,wp1_0.preference,wp1_0.start_weight,wp1_0.target_weight from weight_plan wp1_0 where wp1_0.athlete_id=?"
+      }
+    ]
+  }
+]
