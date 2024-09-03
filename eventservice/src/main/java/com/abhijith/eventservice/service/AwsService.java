@@ -22,7 +22,7 @@ import java.io.InputStream;
 public class AwsService {
 
     private final AmazonS3 s3Client;
-    BasicAWSCredentials credentials = new BasicAWSCredentials("", "");
+    BasicAWSCredentials credentials = new BasicAWSCredentials("", "+");
 
     public AwsService() {
         this.s3Client = AmazonS3Client.builder()
