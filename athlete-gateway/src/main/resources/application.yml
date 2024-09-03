@@ -3,7 +3,7 @@ spring:
     gateway:
       routes:
         - id: usermanagementservice
-          uri: http://localhost:8900
+          uri: lb://usermanagementservice
           predicates:
             - Path=/athletes/**,/coaches/**
           filters:
@@ -14,13 +14,13 @@ spring:
           predicates:
             - Path=/auth/**
         - id: eventservice
-          uri: http://localhost:8901
+          uri: lb://eventservice
           predicates:
             - Path=/event/**,/meet/**
           filters:
             - AuthenticationFilter
         - id: wellness
-          uri: http://localhost:8902
+          uri: lb://wellness
           predicates:
             - Path=/wellness/**
           filters:

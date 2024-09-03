@@ -11,6 +11,7 @@
         <option value="$PROJECT_DIR$/athlete-gateway/pom.xml" />
         <option value="$PROJECT_DIR$/usermanagementservice/pom.xml" />
         <option value="$PROJECT_DIR$/athletics-service-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/athlete-eureka-service/pom.xml" />
       </list>
     </option>
   </component>

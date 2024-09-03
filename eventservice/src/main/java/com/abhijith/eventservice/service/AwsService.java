@@ -10,11 +10,9 @@ import com.amazonaws.services.s3.AmazonS3Client;
 import com.amazonaws.services.s3.model.ObjectMetadata;
 import com.amazonaws.services.s3.model.PutObjectRequest;
 import com.amazonaws.util.IOUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -22,7 +20,7 @@ import java.io.InputStream;
 public class AwsService {
 
     private final AmazonS3 s3Client;
-    BasicAWSCredentials credentials = new BasicAWSCredentials("", "+");
+    BasicAWSCredentials credentials = new BasicAWSCredentials("", "//");
 
     public AwsService() {
         this.s3Client = AmazonS3Client.builder()
@@ -38,7 +36,6 @@ public class AwsService {
         ObjectMetadata metadata = new ObjectMetadata();
         metadata.setContentLength(contentLength);
 
-        // Use a ByteArrayInputStream instead of the original InputStream
         try (InputStream byteArrayInputStream = new ByteArrayInputStream(contentBytes)) {
             s3Client.putObject(new PutObjectRequest("", fileName, byteArrayInputStream, metadata));
             return s3Client.getUrl("", fileName).toString();

@@ -41,6 +41,7 @@ public class Event {
 
     private String category;
 
+    @Column(length = 1000)
     private String eventDescription;
 
     private String photoUrl;

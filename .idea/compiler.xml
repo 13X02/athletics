@@ -7,18 +7,22 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="news" />
         <module name="auth-service" />
         <module name="eventservice" />
         <module name="wellness" />
-        <module name="athletic-service-registry" />
         <module name="usermanagementservice" />
         <module name="athlete-gateway" />
+        <module name="athlete-eureka-service" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="athletic-service-registry" target="17" />
+      <module name="news" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="athlete-eureka-service" options="-parameters" />
       <module name="athlete-gateway" options="-parameters" />
       <module name="athletic-service-registry" options="-parameters" />
       <module name="auth-service" options="-parameters" />
