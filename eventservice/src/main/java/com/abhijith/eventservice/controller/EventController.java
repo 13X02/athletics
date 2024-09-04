@@ -191,7 +191,7 @@ public class EventController {
 
     }
 
-    @GetMapping("/registrations/event/{id}")
+    @GetMapping("/pendingregistrations/event/{id}")
     public ResponseEntity<List<Registration>> getRegistrationByEvent(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead,@PathVariable String id) {
 
         UserInfo userInfo = jwtService.extractUserInfo(authHead);
@@ -199,6 +199,25 @@ public class EventController {
         if (feignClientService.validateId(userInfo.getUserId())){
             if (userInfo.getRole().equals(UserRole.ADMIN)){
                 return new ResponseEntity<>(registrationService.getRegistrationByEvent(id), HttpStatus.OK);
+            }else {
+                return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
+            }
+        }
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+
+
+
+    }
+
+
+    @GetMapping("/approvedregistrations/event/{id}")
+    public ResponseEntity<List<Registration>> getApprovedRegistrationByEvent(@RequestHeader(HttpHeaders.AUTHORIZATION)String authHead,@PathVariable String id) {
+
+        UserInfo userInfo = jwtService.extractUserInfo(authHead);
+
+        if (feignClientService.validateId(userInfo.getUserId())){
+            if (userInfo.getRole().equals(UserRole.ADMIN)){
+                return new ResponseEntity<>(registrationService.getApprovedRegistrationByEvent(id), HttpStatus.OK);
             }else {
                 return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
             }

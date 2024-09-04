@@ -84,8 +84,22 @@ public class RegistrationService {
 
     public List<Registration> getRegistrationByEvent(String id) {
         Optional<Event> event = eventRepository.findById(id);
+        System.out.println(event.get());
+        System.out.println();
         if(event.isPresent()) {
             return registrationRepository.findAllByEventAndStatus(event.get(), RegistrationStatus.PENDING);
+        }else {
+            throw new EventNotFoundException(id);
+        }
+
+    }
+
+    public List<Registration> getApprovedRegistrationByEvent(String id) {
+        Optional<Event> event = eventRepository.findById(id);
+        System.out.println(event.get());
+        System.out.println();
+        if(event.isPresent()) {
+            return registrationRepository.findAllByEventAndStatus(event.get(), RegistrationStatus.APPROVED);
         }else {
             throw new EventNotFoundException(id);
         }
