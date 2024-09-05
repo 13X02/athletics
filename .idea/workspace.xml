@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="2260748e-4e25-4a19-a40e-d34b1faa57b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/appmap.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/athletics.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/aws.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/5.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/appmap.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/src/main/java/com/abhijith/athleteeurekaservice/AthleteEurekaServiceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-eureka-service/src/test/java/com/abhijith/athleteeurekaservice/AthleteEurekaServiceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/AthleteGatewayApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/config/CorsConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/exception/UnAuthorizedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/filter/AuthenticationFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/filter/RouteValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/java/com/abhijith/athlete_gateway/util/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/athlete-gateway/src/test/java/com/abhijith/athlete_gateway/AthleteGatewayApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/diagram-export-8-28-2024-5_26_23-PM.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/EventserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/client/Athlete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/controller/EventController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/controller/MeetController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/EventRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/EventResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/EventStatsResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/MeetRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/RegistrationRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/ResultAthleteResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/ResultEventResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/ResultRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/dto/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/AlreadyRegisteredException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/AthleteNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/AuthorizationFailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/EventNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/MeetNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/exception/RegistrationNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/feign/FeignClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/Event.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/EventStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/Meet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/RegistrationStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/model/Result.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/repo/EventRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/repo/MeetRepositoy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/repo/RegistrationRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/repo/ResultRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/AwsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/EventService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/MeetService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/RegistrationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/service/ResultService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/utils/AppUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/utils/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/java/com/abhijith/eventservice/utils/StringPrefixedSequenceIdGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/eventservice/src/test/java/com/abhijith/eventservice/EventserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/export_into_db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sports-tools_53876-138077.avif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/UsermanagementserviceApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/client/Users.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/AthleteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/controller/CoachController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/dto/AnalysisResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/dto/AssistanceRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/dto/AthleteRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/dto/CoachRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/dto/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/exception/AthleteNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/exception/AuthorizationFailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/exception/CoachNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/exception/DuplicateRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/feign/FeignClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/model/Achievments.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/model/AssistanceRequest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/model/Athlete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/model/Coach.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/model/RequestStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AchievementsRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AssistanceRequestRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/AthleteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/repository/CoachRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AthleteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/AwsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/CoachService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/service/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/AppUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/java/com/abhijith/usermanagementservice/util/StringPrefixedSequenceIdGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/usermanagementservice/src/test/java/com/abhijith/usermanagementservice/UsermanagementserviceApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/WellnessApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/config/RestTemplateConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/controller/WellNessController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/dto/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/exception/AthleteNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/exception/AuthorizationFailException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/exception/GlobalExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/exception/WeightPlanNotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/feign/FeignClientService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/model/DailyDiet.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/model/DietRecommendation.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/model/UserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/model/UserRole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/model/WeightPlan.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/repo/DailyDietRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/repo/WeightPlanRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/service/DietService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/service/JwtService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/java/com/abhijith/wellness/util/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/main/resources/application.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/wellness/src/test/java/com/abhijith/wellness/WellnessApplicationTests.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2lafLnnTIQS9izmcl30IhNPt0jO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.AthleteEurekaServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AthleteGatewayApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EventserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.UsermanagementserviceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.WellnessApplication.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Downloads/dummy2/athletics&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Application.EventserviceApplication">
+    <configuration name="AthleteGatewayApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abhijith.athlete_gateway.AthleteGatewayApplication" />
+      <module name="athlete-gateway" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abhijith.athlete_gateway.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthServiceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abhijith.auth_service.AuthServiceApplication" />
+      <module name="auth-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abhijith.auth_service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abhijith.eventservice.EventserviceApplication" />
+      <module name="eventservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abhijith.eventservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsermanagementserviceApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abhijith.usermanagementservice.UsermanagementserviceApplication" />
+      <module name="usermanagementservice" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abhijith.usermanagementservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WellnessApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.abhijith.wellness.WellnessApplication" />
+      <module name="wellness" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.abhijith.wellness.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.EventserviceApplication" />
+        <item itemvalue="Application.AthleteGatewayApplication" />
+        <item itemvalue="Application.WellnessApplication" />
+        <item itemvalue="Application.UsermanagementserviceApplication" />
+        <item itemvalue="Application.AuthServiceApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2260748e-4e25-4a19-a40e-d34b1faa57b0" name="Changes" comment="" />
+      <created>1725423055232</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1725423055232</updated>
+    </task>
+    <servers />
+  </component>
+</project>
