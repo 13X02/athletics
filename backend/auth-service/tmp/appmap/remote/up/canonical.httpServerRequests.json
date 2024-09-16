@@ -1,7 +1,0 @@
-[
-  {
-    "route": "PUT /athletes/edit",
-    "parameters": "()",
-    "status": 200
-  }
-]

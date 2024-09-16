@@ -1,0 +1,108 @@
+version: '3.8'
+
+services:
+  athlete-eureka-service:
+    build:
+      context: ./athlete-eureka-service
+    ports:
+      - "8761:8761"
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+    networks:
+      - app-network
+
+  athlete-gateway:
+    build:
+      context: ./athlete-gateway
+    ports:
+      - "8081:8081"
+    depends_on:
+      - athlete-eureka-service
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - EUREKA_SERVER_URL=http://athlete-eureka-service:8761/eureka
+    networks:
+      - app-network
+
+  auth-service:
+    build:
+      context: ./auth-service
+    ports:
+      - "9899:9899"
+    depends_on:
+      - athlete-eureka-service
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - EUREKA_SERVER_URL=http://athlete-eureka-service:8761/eureka
+      - MYSQL_URL=jdbc:mysql://mysql:3306/authdb
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=yourpassword
+    networks:
+      - app-network
+
+  eventservice:
+    build:
+      context: ./eventservice
+    ports:
+      - "8901:8901"
+    depends_on:
+      - athlete-eureka-service
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - EUREKA_SERVER_URL=http://athlete-eureka-service:8761/eureka
+      - MYSQL_URL=jdbc:mysql://mysql:3306/eventdb
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=yourpassword
+    networks:
+      - app-network
+
+  wellness-service:
+    build:
+      context: ./wellness
+    ports:
+      - "8902:8902"
+    depends_on:
+      - athlete-eureka-service
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - EUREKA_SERVER_URL=http://athlete-eureka-service:8761/eureka
+      - MYSQL_URL=jdbc:mysql://mysql:3306/wellnessdb
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=yourpassword
+    networks:
+      - app-network
+
+  usermanagement:
+    build:
+      context: ./usermanagementservice
+    ports:
+      - "8900:8900"
+    depends_on:
+      - athlete-eureka-service
+      - mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=dev
+      - EUREKA_SERVER_URL=http://athlete-eureka-service:8761/eureka
+      - MYSQL_URL=jdbc:mysql://mysql:3306/usermanagementdb
+      - MYSQL_USERNAME=root
+      - MYSQL_PASSWORD=yourpassword
+    networks:
+      - app-network
+
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: yourpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql-init:/docker-entrypoint-initdb.d
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

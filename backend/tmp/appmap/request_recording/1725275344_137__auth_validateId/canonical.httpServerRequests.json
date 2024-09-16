@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /auth/validateId",
-    "parameters": "(id)",
-    "status": 200
-  }
-]

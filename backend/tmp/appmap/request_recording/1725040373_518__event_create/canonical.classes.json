@@ -1,9 +1,0 @@
-[
-  "com/abhijith/eventservice/controller/EventController",
-  "com/abhijith/eventservice/dto/UserRole",
-  "com/abhijith/eventservice/exception/GlobalExceptionHandler",
-  "com/abhijith/eventservice/feign/FeignClientService",
-  "com/abhijith/eventservice/service/EventService",
-  "com/abhijith/eventservice/service/JwtService",
-  "com/abhijith/eventservice/utils/JwtUtil"
-]

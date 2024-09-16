@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "POST /wellness/daily-diet",
-    "callee": "com/abhijith"
-  }
-]

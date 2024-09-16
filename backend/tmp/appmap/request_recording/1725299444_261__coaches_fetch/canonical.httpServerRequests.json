@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /coaches/fetch",
-    "parameters": "()",
-    "status": 200
-  }
-]

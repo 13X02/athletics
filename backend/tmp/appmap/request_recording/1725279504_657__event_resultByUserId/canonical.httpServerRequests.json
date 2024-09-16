@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /event/resultByUserId",
-    "parameters": "(id)",
-    "status": 500
-  }
-]

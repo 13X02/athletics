@@ -3,28 +3,31 @@ spring:
     gateway:
       routes:
         - id: usermanagementservice
-          uri: lb://usermanagementservice
+          uri: lb://USERMANAGEMENTSERVICE
           predicates:
             - Path=/athletes/**,/coaches/**
           filters:
             - AuthenticationFilter
 
         - id: auth-service
-          uri: lb://auth-service
+          uri: lb://AUTH-SERVICE
           predicates:
             - Path=/auth/**
+
         - id: eventservice
-          uri: lb://eventservice
+          uri: lb://EVENTSERVICE
           predicates:
             - Path=/event/**,/meet/**
           filters:
             - AuthenticationFilter
-        - id: wellness
-          uri: lb://wellness
+
+        - id: wellness-service
+          uri: lb://WELLNESS
           predicates:
             - Path=/wellness/**
           filters:
             - AuthenticationFilter
+
       default-filters:
         - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin
       globalcors:
@@ -45,4 +48,6 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone : http://localhost:8761/eureka/
+      defaultZone: ${EUREKA_SERVER_URL}
+    fetch-registry: true
+    register-with-eureka: true

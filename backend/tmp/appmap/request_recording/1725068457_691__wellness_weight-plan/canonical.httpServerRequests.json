@@ -1,7 +1,0 @@
-[
-  {
-    "route": "POST /wellness/weight-plan",
-    "parameters": "()",
-    "status": 201
-  }
-]

@@ -1,3 +1,0 @@
-[
-  "select uc1_0.id from user_credential uc1_0 where uc1_0.username=? limit ?"
-]

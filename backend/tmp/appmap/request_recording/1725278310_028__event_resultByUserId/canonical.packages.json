@@ -1,6 +1,0 @@
-[
-  "com/abhijith/eventservice/controller",
-  "com/abhijith/eventservice/exception",
-  "com/abhijith/eventservice/service",
-  "com/abhijith/eventservice/utils"
-]

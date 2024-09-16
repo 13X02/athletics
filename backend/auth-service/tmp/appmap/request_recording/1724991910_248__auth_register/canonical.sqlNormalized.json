@@ -1,3 +1,0 @@
-[
-  "insert into user_credential (email,password,role,username) values (?,?,?,?)"
-]

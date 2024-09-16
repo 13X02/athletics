@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /wellness/recommendation",
-    "parameters": "()",
-    "status": 200
-  }
-]

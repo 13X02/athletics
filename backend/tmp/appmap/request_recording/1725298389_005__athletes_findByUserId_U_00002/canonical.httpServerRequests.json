@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /athletes/findByUserId/{userId}",
-    "parameters": "()",
-    "status": 200
-  }
-]

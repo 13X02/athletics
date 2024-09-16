@@ -1,5 +1,0 @@
-[
-  "insert into user_credential (email,password,role,username,id) values (?,?,?,?,?)",
-  "select next_val as id_val from res_seq for update",
-  "update res_seq set next_val= ? where next_val=?"
-]

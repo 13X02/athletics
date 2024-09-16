@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "GET /wellness/recommendation",
-    "callee": "com/abhijith"
-  }
-]

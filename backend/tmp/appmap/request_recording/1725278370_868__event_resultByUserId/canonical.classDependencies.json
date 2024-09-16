@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "GET /event/resultByUserId",
-    "callee": "com/abhijith"
-  }
-]

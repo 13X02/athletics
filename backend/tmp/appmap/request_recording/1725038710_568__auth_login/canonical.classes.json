@@ -1,5 +1,0 @@
-[
-  "com/abhijith/auth_service/config/CustomUserDetailsService",
-  "com/abhijith/auth_service/controller/AuthController",
-  "com/abhijith/auth_service/repository/UserCredentialRepository"
-]

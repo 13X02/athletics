@@ -1,7 +1,0 @@
-[
-  {
-    "route": "POST /auth/login",
-    "parameters": "()",
-    "status": null
-  }
-]

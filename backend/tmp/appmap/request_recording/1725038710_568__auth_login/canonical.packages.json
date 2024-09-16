@@ -1,5 +1,0 @@
-[
-  "com/abhijith/auth_service/config",
-  "com/abhijith/auth_service/controller",
-  "com/abhijith/auth_service/repository"
-]

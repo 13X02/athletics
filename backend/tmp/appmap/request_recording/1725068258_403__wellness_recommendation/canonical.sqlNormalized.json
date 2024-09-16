@@ -1,3 +1,0 @@
-[
-  "select wp1_0.id,wp1_0.athlete_id,wp1_0.daily_calorie_goal,wp1_0.preference,wp1_0.start_weight,wp1_0.target_weight from weight_plan wp1_0 where wp1_0.athlete_id=?"
-]

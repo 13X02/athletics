@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /athletes/validate",
-    "parameters": "(id)",
-    "status": 200
-  }
-]

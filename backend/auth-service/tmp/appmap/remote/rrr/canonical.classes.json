@@ -1,5 +1,0 @@
-[
-  "com/abhijith/eventservice/controller/EventController",
-  "com/abhijith/eventservice/exception/GlobalExceptionHandler",
-  "com/abhijith/eventservice/service/EventService"
-]

@@ -1,7 +1,0 @@
-[
-  {
-    "route": "GET /athletes/fetchAthleteByUserId/{userId}",
-    "parameters": "()",
-    "status": 200
-  }
-]

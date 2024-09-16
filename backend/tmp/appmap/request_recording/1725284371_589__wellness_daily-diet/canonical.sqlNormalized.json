@@ -1,5 +1,0 @@
-[
-  "insert into daily_diet (athlete_id,calories,current_weight,date,weight_plan_id,id) values (?,?,?,?,?,?)",
-  "select next_val as id_val from daily_diet_seq for update",
-  "update daily_diet_seq set next_val= ? where next_val=?"
-]

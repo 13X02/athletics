@@ -1,9 +1,0 @@
-[
-  "com/abhijith/wellness/controller/WellNessController",
-  "com/abhijith/wellness/feign/FeignClientService",
-  "com/abhijith/wellness/model/UserRole",
-  "com/abhijith/wellness/repo/WeightPlanRepository",
-  "com/abhijith/wellness/service/DietService",
-  "com/abhijith/wellness/service/JwtService",
-  "com/abhijith/wellness/util/JwtUtil"
-]

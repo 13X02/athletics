@@ -1,3 +1,0 @@
-[
-  "select dd1_0.id,dd1_0.athlete_id,dd1_0.calories,dd1_0.current_weight,dd1_0.date,dd1_0.weight_plan_id from daily_diet dd1_0 where dd1_0.athlete_id=?"
-]

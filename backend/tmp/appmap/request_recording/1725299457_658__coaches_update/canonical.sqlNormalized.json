@@ -1,4 +1,0 @@
-[
-  "select c1_0.coach_id,c1_0.birth_date,c1_0.category,c1_0.create_date,c1_0.first_name,c1_0.gender,c1_0.last_name,c1_0.photo_url,c1_0.user_id from coach c1_0 where c1_0.user_id=?",
-  "update coach set birth_date=?,category=?,create_date=?,first_name=?,gender=?,last_name=?,photo_url=?,user_id=? where coach_id=?"
-]

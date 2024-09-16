@@ -1,6 +1,0 @@
-[
-  {
-    "caller": "POST /event/register",
-    "callee": "com/abhijith"
-  }
-]
